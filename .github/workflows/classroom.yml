@@ -40,11 +40,41 @@ jobs:
         command: npm test exercises/03-use-strict
         timeout: 10
         max-score: 5
+    - name: 'Exercise 05: Data Types'
+      id: exercise-05-data-types
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 05: Data Types'
+        setup-command: npm ci
+        command: npm test exercises/05-data-types
+        timeout: 10
+        max-score: 5
+    - name: npm test exercises/05-data-types
+      id: npm-test-exercises-05-data-types
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: npm test exercises/05-data-types
+        setup-command: npm ci
+        command: npm test exercises/05-data-types
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 06: Interaction'
+      id: exercise-06-interaction
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 06: Interaction'
+        setup-command: npm ci
+        command: npm test exercises/06-interaction
+        timeout: 10
+        max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         EXERCISE-01-HELLO-WORLD_RESULTS: "${{steps.exercise-01-hello-world.outputs.result}}"
         EXERCISE-02-CODE-STRUCTURE_RESULTS: "${{steps.exercise-02-code-structure.outputs.result}}"
         EXERCISE-03-USE-STRICT_RESULTS: "${{steps.exercise-03-use-strict.outputs.result}}"
+        EXERCISE-05-DATA-TYPES_RESULTS: "${{steps.exercise-05-data-types.outputs.result}}"
+        NPM-TEST-EXERCISES-05-DATA-TYPES_RESULTS: "${{steps.npm-test-exercises-05-data-types.outputs.result}}"
+        EXERCISE-06-INTERACTION_RESULTS: "${{steps.exercise-06-interaction.outputs.result}}"
       with:
-        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict
+        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,npm-test-exercises-05-data-types,exercise-06-interaction
