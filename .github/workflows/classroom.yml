@@ -1,0 +1,50 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: 'Exercise 01: Hello, world!'
+      id: exercise-01-hello-world
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 01: Hello, world!'
+        setup-command: npm ci
+        command: npm test exercises/01-hello-world
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 02: Code Structure'
+      id: exercise-02-code-structure
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 02: Code Structure'
+        setup-command: npm ci
+        command: npm test exercises/02-code-structure
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 03: Use Strict'
+      id: exercise-03-use-strict
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 03: Use Strict'
+        setup-command: npm ci
+        command: npm test exercises/03-use-strict
+        timeout: 10
+        max-score: 5
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EXERCISE-01-HELLO-WORLD_RESULTS: "${{steps.exercise-01-hello-world.outputs.result}}"
+        EXERCISE-02-CODE-STRUCTURE_RESULTS: "${{steps.exercise-02-code-structure.outputs.result}}"
+        EXERCISE-03-USE-STRICT_RESULTS: "${{steps.exercise-03-use-strict.outputs.result}}"
+      with:
+        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict
