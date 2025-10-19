@@ -130,6 +130,33 @@ jobs:
         command: npm test exercises/14-switch
         timeout: 10
         max-score: 5
+    - name: 'Exercise 15: Functions'
+      id: exercise-15-functions
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 15: Functions'
+        setup-command: npm ci
+        command: npm test exercises/15-functions
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 16: Function Expressions'
+      id: exercise-16-function-expressions
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 16: Function Expressions'
+        setup-command: npm ci
+        command: npm test exercises/16-function-expressions
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 17: Arrow Functions'
+      id: exercise-17-arrow-functions
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 17: Arrow Functions'
+        setup-command: npm ci
+        command: npm test exercises/17-arrow-basics
+        timeout: 10
+        max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
@@ -146,5 +173,8 @@ jobs:
         EXERCISE-12-NULLISH-COALESCING_RESULTS: "${{steps.exercise-12-nullish-coalescing.outputs.result}}"
         EXERCISE-13-LOOPS_RESULTS: "${{steps.exercise-13-loops.outputs.result}}"
         EXERCISE-14-SWITCH-STATEMENT_RESULTS: "${{steps.exercise-14-switch-statement.outputs.result}}"
+        EXERCISE-15-FUNCTIONS_RESULTS: "${{steps.exercise-15-functions.outputs.result}}"
+        EXERCISE-16-FUNCTION-EXPRESSIONS_RESULTS: "${{steps.exercise-16-function-expressions.outputs.result}}"
+        EXERCISE-17-ARROW-FUNCTIONS_RESULTS: "${{steps.exercise-17-arrow-functions.outputs.result}}"
       with:
-        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,exercise-06-interaction,exercise-07-type-conversions,exercise-08-operators-math,exercise-09-comparisons,exercise-10-conditionals,exercise-11-logical-operators,exercise-12-nullish-coalescing,exercise-13-loops,exercise-14-switch-statement
+        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,exercise-06-interaction,exercise-07-type-conversions,exercise-08-operators-math,exercise-09-comparisons,exercise-10-conditionals,exercise-11-logical-operators,exercise-12-nullish-coalescing,exercise-13-loops,exercise-14-switch-statement,exercise-15-functions,exercise-16-function-expressions,exercise-17-arrow-functions
