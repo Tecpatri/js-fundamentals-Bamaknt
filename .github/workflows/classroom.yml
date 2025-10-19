@@ -49,15 +49,6 @@ jobs:
         command: npm test exercises/05-data-types
         timeout: 10
         max-score: 5
-    - name: npm test exercises/05-data-types
-      id: npm-test-exercises-05-data-types
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: npm test exercises/05-data-types
-        setup-command: npm ci
-        command: npm test exercises/05-data-types
-        timeout: 10
-        max-score: 5
     - name: 'Exercise 06: Interaction'
       id: exercise-06-interaction
       uses: classroom-resources/autograding-command-grader@v1
@@ -67,6 +58,33 @@ jobs:
         command: npm test exercises/06-interaction
         timeout: 10
         max-score: 5
+    - name: 'Exercise 07: Type Conversions'
+      id: exercise-07-type-conversions
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 07: Type Conversions'
+        setup-command: npm ci
+        command: npm test exercises/07-type-conversions
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 08: Operators & Math'
+      id: exercise-08-operators-math
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 08: Operators & Math'
+        setup-command: npm ci
+        command: npm test exercises/08-operators-math
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 09: Comparisons'
+      id: exercise-09-comparisons
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 09: Comparisons'
+        setup-command: npm ci
+        command: npm test exercises/09-comparisons
+        timeout: 10
+        max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
@@ -74,7 +92,9 @@ jobs:
         EXERCISE-02-CODE-STRUCTURE_RESULTS: "${{steps.exercise-02-code-structure.outputs.result}}"
         EXERCISE-03-USE-STRICT_RESULTS: "${{steps.exercise-03-use-strict.outputs.result}}"
         EXERCISE-05-DATA-TYPES_RESULTS: "${{steps.exercise-05-data-types.outputs.result}}"
-        NPM-TEST-EXERCISES-05-DATA-TYPES_RESULTS: "${{steps.npm-test-exercises-05-data-types.outputs.result}}"
         EXERCISE-06-INTERACTION_RESULTS: "${{steps.exercise-06-interaction.outputs.result}}"
+        EXERCISE-07-TYPE-CONVERSIONS_RESULTS: "${{steps.exercise-07-type-conversions.outputs.result}}"
+        EXERCISE-08-OPERATORS-MATH_RESULTS: "${{steps.exercise-08-operators-math.outputs.result}}"
+        EXERCISE-09-COMPARISONS_RESULTS: "${{steps.exercise-09-comparisons.outputs.result}}"
       with:
-        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,npm-test-exercises-05-data-types,exercise-06-interaction
+        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,exercise-06-interaction,exercise-07-type-conversions,exercise-08-operators-math,exercise-09-comparisons
