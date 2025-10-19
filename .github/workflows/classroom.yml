@@ -85,6 +85,51 @@ jobs:
         command: npm test exercises/09-comparisons
         timeout: 10
         max-score: 5
+    - name: 'Exercise 10: Conditionals'
+      id: exercise-10-conditionals
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 10: Conditionals'
+        setup-command: npm ci
+        command: npm test exercises/10-conditionals
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 11: Logical Operators'
+      id: exercise-11-logical-operators
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 11: Logical Operators'
+        setup-command: npm ci
+        command: npm test exercises/11-logical-operators
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 12: Nullish Coalescing'
+      id: exercise-12-nullish-coalescing
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 12: Nullish Coalescing'
+        setup-command: npm ci
+        command: npm test exercises/12-nullish-coalescing
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 13: Loops'
+      id: exercise-13-loops
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 13: Loops'
+        setup-command: npm ci
+        command: npm test exercises/13-loops
+        timeout: 10
+        max-score: 5
+    - name: 'Exercise 14: Switch Statement'
+      id: exercise-14-switch-statement
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'Exercise 14: Switch Statement'
+        setup-command: npm ci
+        command: npm test exercises/14-switch
+        timeout: 10
+        max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
@@ -96,5 +141,10 @@ jobs:
         EXERCISE-07-TYPE-CONVERSIONS_RESULTS: "${{steps.exercise-07-type-conversions.outputs.result}}"
         EXERCISE-08-OPERATORS-MATH_RESULTS: "${{steps.exercise-08-operators-math.outputs.result}}"
         EXERCISE-09-COMPARISONS_RESULTS: "${{steps.exercise-09-comparisons.outputs.result}}"
+        EXERCISE-10-CONDITIONALS_RESULTS: "${{steps.exercise-10-conditionals.outputs.result}}"
+        EXERCISE-11-LOGICAL-OPERATORS_RESULTS: "${{steps.exercise-11-logical-operators.outputs.result}}"
+        EXERCISE-12-NULLISH-COALESCING_RESULTS: "${{steps.exercise-12-nullish-coalescing.outputs.result}}"
+        EXERCISE-13-LOOPS_RESULTS: "${{steps.exercise-13-loops.outputs.result}}"
+        EXERCISE-14-SWITCH-STATEMENT_RESULTS: "${{steps.exercise-14-switch-statement.outputs.result}}"
       with:
-        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,exercise-06-interaction,exercise-07-type-conversions,exercise-08-operators-math,exercise-09-comparisons
+        runners: exercise-01-hello-world,exercise-02-code-structure,exercise-03-use-strict,exercise-05-data-types,exercise-06-interaction,exercise-07-type-conversions,exercise-08-operators-math,exercise-09-comparisons,exercise-10-conditionals,exercise-11-logical-operators,exercise-12-nullish-coalescing,exercise-13-loops,exercise-14-switch-statement
