@@ -7,7 +7,23 @@
 export function identifyType(value) {
   // TODO: Return the result of typeof value
 }
+JavaScript has 7 primitive data types:
 
+string
+number
+boolean
+bigint
+symbol
+null
+undefined
+
+typeof "John"         // Returns string
+typeof ("John"+"Doe") // Returns string
+
+function identifyType(firstName){
+  console.log(typeof firstName);
+}
+identifyType("martin");
 /**
  * Create a greeting string using template literals
  *
@@ -16,9 +32,19 @@ export function identifyType(value) {
  *
  * Example: name="Alice", age=25 -> "Hello, Alice! You are 25 years old."
  */
+
+const name = "martin";
+const age = 48;
+const message = 'Hello, ${name} ! You are ${age} years old.';
+console.log(message);
+
 export function createTemplateString(name, age) {
   // TODO: Create and return a template literal string with name and age
 }
+function createTemplateString(name, age){
+  console.log('Hello, ${name}, ! You are ${age} years old.');
+}
+createTemplateString("Martin", 48);
 
 /**
  * Check if a value is Infinity or NaN

@@ -7,7 +7,11 @@ export function demonstrateStrictMode() {
   // Return true if we're in strict mode, false otherwise
   return (function () { return this; })() === undefined;
 }
-
+function demonstrateStrictMode(){
+  'use strict';
+  console.log(this);
+}
+demonstrateStrictMode();
 export function noUndeclaredVariables() {
   'use strict';
   // In strict mode, you cannot use variables without declaring them
@@ -15,7 +19,12 @@ export function noUndeclaredVariables() {
   // Declare a variable 'message' with value "strict mode works"
   // and return it
 }
-
+function declaredValue(){
+  'use strict';
+  let message = "strict mode works";
+  console.log(message);
+}
+declaredValue();
 export function noDelete() {
   'use strict';
   // In strict mode, you cannot delete variables
@@ -24,3 +33,9 @@ export function noDelete() {
   const value = 42;
   return value;
 }
+function noDelete(){
+  'use strict';
+  const value = 42;
+  delete (value);
+}
+noDelete();
