@@ -35,16 +35,17 @@ identifyType("martin");
 
 const name = "martin";
 const age = 48;
-const message = 'Hello, ${name} ! You are ${age} years old.';
+//const message = "Hello, " + name + ! " You are " + age + " years old.";
+const message = `Hello, ${name} ! You are ${age} years old.`;
 console.log(message);
 
 export function createTemplateString(name, age) {
-  // TODO: Create and return a template literal string with name and age
+// TODO: Create and return a template literal string with name and age
 }
 function createTemplateString(name, age){
-  console.log('Hello, ${name}, ! You are ${age} years old.');
+  console.log(`Hello, ${name}, ! You are ${age} years old.`);
 }
-createTemplateString("Martin", 48);
+createTemplateString("martin", 48);
 
 /**
  * Check if a value is Infinity or NaN
@@ -55,12 +56,21 @@ createTemplateString("Martin", 48);
  *
  * Hint: Use Number.isFinite() and Number.isNaN()
  */
+console.log(typeof 1/0)
+
+let num = {
+  isInfinity | -Infinity,
+  isNaN
+}
 export function checkSpecialNumbers(value) {
   // TODO: Check if value is Infinity (use !Number.isFinite() and typeof === 'number')
   // TODO: Check if value is NaN (use Number.isNaN())
   // TODO: Return { isInfinity: ..., isNaN: ... }
 }
-
+function checkSpecialNumbers(number.isFinite, number.isNaN){
+  console.log(typeof number);
+}
+checkSpecialNumbers(1/0, 0/2);
 /**
  * Demonstrate all 8 JavaScript data types
  *
@@ -76,11 +86,23 @@ export function checkSpecialNumbers(value) {
  *   object: an object
  * }
  */
+console.log(typeof 1);
+console.log(typeof 10n);
+console.log(typeof "martin");
+console.log(typeof true);
+console.log(typeof );
+console.log(typeof x);
+console.log(typeof symbol());
+console.log(typeof {name:'Martin'} );
+
 export function demonstrateAllTypes() {
   // TODO: Create and return an object with all 8 data types
   // Use Symbol('id') for the symbol type
 }
-
+function demonstrateAllTypes(obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8){
+  console.log(typeof obj1, typeof obj2, typeof obj3, typeof obj4, typeof obj5, typeof obj6, typeof obj7);
+}
+demonstrateAllTypes(1, true, null, "martin", 123n, {name:'martin'}, Symbol('id'), undefined);
 /**
  * Differentiate between null and undefined
  *
@@ -95,6 +117,13 @@ export function demonstrateAllTypes() {
 export function differentiateNullUndefined() {
   // TODO: Return an object with the four properties described above
 }
+null is a variale declared with no value assigned;
+undefined is a variable declared with its value purposely assigned to null;
+
+{middleName:''}  //no value assigned to variable
+console.log(typeof undefined);
+let middleName = null;  //value assigned to variable is 'null'
+
 
 /**
  * Work with template literals and expressions
@@ -107,3 +136,7 @@ export function differentiateNullUndefined() {
 export function templateWithExpression(a, b) {
   // TODO: Return a template literal with the sum calculated inside ${}
 }
+let a = 12;
+let b = 13;
+let sum = `the sum of ${a} and ${b} is ${a + b}`;
+console.log(sum);

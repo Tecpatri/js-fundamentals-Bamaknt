@@ -8,11 +8,11 @@
  *
  * Return the user object.
  */
-const surname = "martin";
+const surName = "martin";
 const name = "daflon";
-const birthday = "01.01.1970";
-const email = "d.mart@gmail.com";
-const phonenumber = "0123456789";
+const birthDate = "01.01.1970";
+const eMail = "d.mart@gmail.com";
+const phoneNumber = "0123456789";
 
 const user = {name:"daflon", age:"55", isActive: true}
 
