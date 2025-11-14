@@ -12,10 +12,14 @@
  *
  * Example: add(2, 3) -> 5
  */
+
 export function add(a, b) {
   // TODO: Return the sum of a and b
 }
-
+function add(a, b){
+  console.log(a + b);
+}
+add(2, 3);
 /**
  * Returns the difference of two numbers
  * @param {number} a - First number
@@ -27,7 +31,10 @@ export function add(a, b) {
 export function subtract(a, b) {
   // TODO: Return the difference of a and b
 }
-
+function subtract(a, b){
+  console.log(a - b);
+}
+subtract(10, 7);
 /**
  * Returns the product of two numbers
  * @param {number} a - First number
@@ -39,7 +46,10 @@ export function subtract(a, b) {
 export function multiply(a, b) {
   // TODO: Return the product of a and b
 }
-
+function multiply(a, b){
+  console.log(a * b);
+}
+multiply(2, 3);
 /**
  * Returns the quotient of two numbers
  * @param {number} a - Dividend
@@ -51,7 +61,10 @@ export function multiply(a, b) {
 export function divide(a, b) {
   // TODO: Return the quotient of a divided by b
 }
-
+function divide(a, b){
+  console.log(a / b);
+}
+divide(2, 3);
 /**
  * Returns the remainder of dividing a by b
  * @param {number} a - Dividend
@@ -63,7 +76,10 @@ export function divide(a, b) {
 export function remainder(a, b) {
   // TODO: Return the remainder using the % operator
 }
-
+function remainder(a, b){
+  console.log(a % b);
+}
+remainder(2, 3);
 /**
  * Returns a raised to the power of b
  * @param {number} a - Base
@@ -75,7 +91,10 @@ export function remainder(a, b) {
 export function power(a, b) {
   // TODO: Return a raised to the power of b using the ** operator
 }
-
+function power(a, b){
+  console.log(a ^ b);
+}
+power(2, 3);
 /**
  * Concatenates two strings with a space between them
  * @param {string} str1 - First string
@@ -87,7 +106,10 @@ export function power(a, b) {
 export function concatenate(str1, str2) {
   // TODO: Concatenate str1 and str2 with a space between them
 }
-
+function concatenate(str1, str2){
+  console.log(str1 + str2);
+}
+concatenate("Hello", "World");
 /**
  * Converts a value to a number using unary plus
  * @param {*} value - Value to convert
@@ -99,7 +121,10 @@ export function concatenate(str1, str2) {
 export function convertToNumber(value) {
   // TODO: Use unary plus (+) to convert value to a number
 }
-
+function convertToNumber(x){
+  console.log(Number(x));
+}
+convertToNumber(+1);
 /**
  * Increments the value property of an object using the prefix increment operator
  * Returns the new value after incrementing
@@ -111,7 +136,10 @@ export function convertToNumber(value) {
 export function incrementByRef(obj) {
   // TODO: Use prefix increment (++obj.value) and return the new value
 }
-
+function incrementByRef(obj){
+  console.log(++obj);
+}
+incrementByRef(5);
 /**
  * Adds two numbers using the compound assignment operator
  * Modifies the first object's value property
@@ -124,7 +152,10 @@ export function incrementByRef(obj) {
 export function addAndAssign(obj, num) {
   // TODO: Use += to add num to obj.value and return the new value
 }
-
+function addAndAssign(obj, num){
+  console.log(obj += num);
+}
+addAndAssign(10, 5);
 /**
  * Converts string numbers to actual numbers and returns their sum
  * Uses unary plus to convert strings to numbers
@@ -138,3 +169,7 @@ export function addAndAssign(obj, num) {
 export function sumStringNumbers(str1, str2) {
   // TODO: Use unary plus (+) to convert both strings to numbers and return their sum
 }
+function sumStringNumbers(str1, str2){
+  console.log(Number(str1 + str2));
+}
+sumStringNumbers(('3' + 5), (10 + '20'));

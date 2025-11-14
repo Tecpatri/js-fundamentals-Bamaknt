@@ -144,7 +144,7 @@ score = score + bonusPoints;
 const maxScore = 100;
 return (score, maxScore);
 
-function demonstrateLetVsConst(initialScore, bonusPoints){
-  console.log(score);
+function demonstrateLetVsConst(initialScore, maxScore){
+  console.log(score, maxScore);
 }
-demonstrateLetVsConst(0, 10);
+demonstrateLetVsConst(10, 100);

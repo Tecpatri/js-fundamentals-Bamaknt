@@ -6,10 +6,21 @@
  *
  * Return what alertFn returns (should be undefined).
  */
+alert("Hello!");
+
+function greet(message){
+  alert(message);
+}
+greet();
+
 export function simulateAlert(alertFn, message) {
   // TODO: Call alertFn with message
   // TODO: Return the result of alertFn (which should be undefined)
 }
+function greet(message){
+  alert(message);
+}
+greet();
 
 /**
  * Simulate prompt behavior
@@ -24,7 +35,12 @@ export function simulatePrompt(promptFn, question) {
   // TODO: If result is null, return "No input provided"
   // TODO: Otherwise, return "You entered: [result]"
 }
+prompt();
 
+function greeting(message){
+  prompt(message);
+}
+greeting();
 /**
  * Simulate confirm behavior
  *
@@ -37,7 +53,12 @@ export function simulateConfirm(confirmFn, question) {
   // TODO: Call confirmFn with question
   // TODO: Return "Confirmed" if true, "Cancelled" if false
 }
+confirm();
 
+function simulateConfirm(confirmFn, question){
+  confirm();
+}
+simulateConfirm();
 /**
  * Handle prompt cancellation
  *
