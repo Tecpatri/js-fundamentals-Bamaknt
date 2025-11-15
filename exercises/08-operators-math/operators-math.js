@@ -172,4 +172,5 @@ export function sumStringNumbers(str1, str2) {
 function sumStringNumbers(str1, str2){
   console.log(Number(str1 + str2));
 }
-sumStringNumbers(('3' + 5), (10 + '20'));
+sumStringNumbers('3' + 5, 10 + '20');
+

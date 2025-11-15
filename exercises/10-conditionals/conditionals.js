@@ -20,8 +20,36 @@
  */
 export function getGrade(score) {
   // TODO: Use if/else if/else to return the appropriate letter grade
+  if (score >= 90) {
+    console.log('A') 
+  }else {
+    console.log('try again');
+  }   
 }
+getGrade(95);
 
+function getGrade(score) {
+  // TODO: Use if/else if/else to return the appropriate letter grade
+  if (score >= 70) {
+    console.log('C')
+  }else {
+    console.log('try again');
+  }   
+}
+getGrade(72);
+
+/*BLOCK TO CHECK
+if (score >= 90){
+    console.log('A'); 
+}elseif (score >= 80){
+    console.log('B');
+}elseif (score >= 70){
+    console.log('C');
+}elseif (score >= 60){
+    console.log('D');
+}else {
+    console.log('F');
+  }
 /**
  * Returns the absolute value of a number
  * (The absolute value is always positive)
@@ -36,8 +64,13 @@ export function getAbsoluteValue(num) {
   // TODO: Use an if/else statement
   // If num is negative, return -num
   // Otherwise, return num
+  if (num < 0){
+    console.log(-num)
+  }else {
+    console.log(num)
+  }
 }
-
+getAbsoluteValue(-5);
 /**
  * Checks if a person can vote based on age
  * @param {number} age - The person's age
@@ -48,7 +81,13 @@ export function getAbsoluteValue(num) {
  */
 export function canVote(age) {
   // TODO: Use an if/else statement to return true or false
+  if (age >= 18){
+    console.log(Boolean(age))
+  }else {
+    console.log('cannot vote');
+  }
 }
+canVote(47);
 
 /**
  * Returns the larger of two numbers using the ternary operator
@@ -62,6 +101,7 @@ export function canVote(age) {
 export function getMax(a, b) {
   // TODO: Use the ternary operator (? :)
   // Format: condition ? valueIfTrue : valueIfFalse
+
 }
 
 /**
