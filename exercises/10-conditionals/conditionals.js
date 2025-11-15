@@ -38,7 +38,7 @@ function getGrade(score) {
 }
 getGrade(72);
 
-/*BLOCK TO CHECK
+BLOCK TO CHECK
 if (score >= 90){
     console.log('A'); 
 }elseif (score >= 80){
