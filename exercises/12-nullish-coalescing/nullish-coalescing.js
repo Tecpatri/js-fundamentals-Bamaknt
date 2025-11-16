@@ -14,8 +14,10 @@
 export function getValueOrDefault(value, defaultValue) {
   // TODO: Use the ?? operator to return value if it's not null/undefined,
   // otherwise return defaultValue
-}
+  alert(value ?? defaultValue);
 
+}
+getValueOrDefault(null, 10);
 /**
  * Formats a user's name. Returns the user's name property, or 'Guest' if the name
  * is null or undefined. This is a common use case for API responses.
@@ -32,8 +34,9 @@ export function getValueOrDefault(value, defaultValue) {
 export function formatUserName(user) {
   // TODO: Use the ?? operator to return user.name if it's not null/undefined,
   // otherwise return 'Guest'
+  alert(user ?? 'Guest');
 }
-
+formatUserName(null);
 /**
  * Gets a configuration value by key, returning a default value if the config value
  * is null or undefined. This is useful when 0, false, or '' are valid config values.
@@ -51,8 +54,9 @@ export function formatUserName(user) {
 export function getConfigValue(config, key, defaultValue) {
   // TODO: Use the ?? operator to return config[key] if it's not null/undefined,
   // otherwise return defaultValue
+  alert(config ?? key ?? defaultValue);
 }
-
+getConfigValue({ volume: 0 }, 'volume', 50);
 /**
  * Returns the first value that is not null or undefined.
  * This demonstrates chaining the ?? operator.
@@ -70,8 +74,9 @@ export function getConfigValue(config, key, defaultValue) {
 export function firstDefinedValue(a, b, c) {
   // TODO: Chain the ?? operator to return the first value that is not null/undefined
   // Hint: a ?? b ?? c
+  alert(a ?? b ?? c);
 }
-
+firstDefinedValue(null, undefined, 42);
 /**
  * Compares the behavior of ?? and || operators with the same value.
  * Returns an object showing the difference between the two operators.
@@ -89,4 +94,6 @@ export function compareOperators(value) {
   // - withNullish: value ?? 'default'
   // - withOr: value || 'default'
   // This shows how ?? treats 0, false, '' as valid values, while || treats them as falsy
+  alert(value ?? 'withNullish' ?? 'withOr');
 }
+compareOperators(withNullish: '', withOr: 'default' );

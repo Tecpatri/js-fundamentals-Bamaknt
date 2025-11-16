@@ -14,6 +14,7 @@ export function countDown(n) {
   // TODO: Use a while loop to count from n down to 1
   // Create an array to store the numbers
   // While n is greater than 0, add n to the array and decrement n
+  
 }
 
 /**
