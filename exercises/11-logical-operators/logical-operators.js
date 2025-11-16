@@ -17,8 +17,9 @@
 export function getFirstTruthy(a, b, c) {
   // TODO: Chain OR operators to return first truthy value
   // Format: a || b || c
+  alert(a || b || c);
 }
-
+getFirstTruthy('', 'martin', 'daflon');
 /**
  * Returns the last value if all three are truthy, otherwise returns first falsy
  * Uses the AND operator which returns the last value if all are truthy
@@ -30,11 +31,14 @@ export function getFirstTruthy(a, b, c) {
  * Example: getLastTruthy(1, 2, 3) -> 3
  * Example: getLastTruthy('hello', 0, 'world') -> 0
  */
+
 export function getLastTruthy(a, b, c) {
   // TODO: Chain AND operators
   // Format: a && b && c
   // Remember: AND returns first falsy or last value if all truthy
+  alert(a && b && c);
 }
+getLastTruthy('hello', 'martin', 'daflon');
 
 /**
  * Checks if a user has access (must be logged in AND active)
@@ -46,8 +50,10 @@ export function getLastTruthy(a, b, c) {
  * Example: hasAccess(true, false) -> false
  */
 export function hasAccess(isLoggedIn, isActive) {
-  // TODO: Use AND operator to check both conditions
+  // TODO: Use AND operator to check both conditions;
+    alert(Boolean(isLoggedIn && isActive));
 }
+hasAccess(true, true);
 
 /**
  * Checks if a person can drive
@@ -62,8 +68,9 @@ export function hasAccess(isLoggedIn, isActive) {
  */
 export function canDrive(hasLicense, isSober, isAdult) {
   // TODO: Use AND operator to check all three conditions
+  alert(Boolean(hasLicense && isSober && isAdult));
 }
-
+canDrive(true, true, true);
 /**
  * Returns the boolean negation of a value
  * @param {*} value - Any value
@@ -75,8 +82,9 @@ export function canDrive(hasLicense, isSober, isAdult) {
  */
 export function negate(value) {
   // TODO: Use the NOT operator (!) to negate the value
+  alert(!Boolean(value));
 }
-
+negate(0);
 /**
  * Returns the value, or defaultValue if value is falsy
  * This is a common pattern for setting default values
@@ -91,4 +99,6 @@ export function negate(value) {
 export function setDefault(value, defaultValue) {
   // TODO: Use OR operator to return value or defaultValue
   // Format: value || defaultValue
+  alert(value || defaultValue);
 }
+setDefault('John', 'Anonymous');
