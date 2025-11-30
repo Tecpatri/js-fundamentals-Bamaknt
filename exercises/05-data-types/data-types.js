@@ -6,9 +6,10 @@
  */
 export function identifyType (value) {
   // TODO: Return the result of typeof value
-  return (typeof value);
+  return (typeof value)
 }
-console.log(identifyType('Hello'));
+identifyType('Hello')
+
 /**
  * Create a greeting string using template literals
  *
@@ -22,7 +23,8 @@ export function createTemplateString (name, age) {
   const message = `My name is ${name} and i am ${age} years old `
   return message
 }
-createTemplateString('Martin', 38);
+createTemplateString('Martin', 38)
+
 /**
  * Check if a value is Infinity or NaN
  *
@@ -36,11 +38,12 @@ export function checkSpecialNumbers (value) {
   // TODO: Check if value is Infinity (use !Number.isFinite() and typeof === 'number')
   // TODO: Check if value is NaN (use Number.isNaN())
   // TODO: Return { isInfinity: ..., isNaN: ... }
-  const isInfinity = !Number.isFinite(value) && typeof value === 'number';
-  const isNaN = Number.isNaN(value);
+  const isInfinity = !Number.isFinite(value) && typeof value === 'number'
+  const isNaN = Number.isNaN(value)
   return { isInfinity, isNaN }
 }
-console.log(checkSpecialNumbers(52));
+checkSpecialNumbers(52)
+
 /**
  * Demonstrate all 8 JavaScript data types
  *
@@ -59,17 +62,19 @@ console.log(checkSpecialNumbers(52));
 export function demonstrateAllTypes () {
   // TODO: Create and return an object with all 8 data types
   // Use Symbol('id') for the symbol type
-  return { number: 123,
-    bigint: 123n, 
-    string: "Hello", 
-    boolean: true, 
-    nullValue: null, 
+  return {
+    number: 123,
+    bigint: 123n,
+    string: 'Hello',
+    boolean: true,
+    nullValue: null,
     undefinedValue: undefined,
-    symbol: Symbol("id"),
-    object: { name:"Martin" },
+    symbol: Symbol('id'),
+    object: { name: 'Martin' }
   }
 }
-console.log(demonstrateAllTypes());
+demonstrateAllTypes()
+
 /**
  * Differentiate between null and undefined
  *
@@ -83,13 +88,14 @@ console.log(demonstrateAllTypes());
  */
 export function differentiateNullUndefined () {
   // TODO: Return an object with the four properties described above
-  return { 
-    nullType: object,
+  return {
+    nullType: 'object',
     undefinedType: undefined,
-    nullEqualsUndefined: loose equality,
-    nullStrictEqualsUndefined: strict equality
+    nullEqualsUndefined: 'null == undefined',
+    nullStrictEqualsUndefined: 'null === undefined'
   }
 }
+differentiateNullUndefined()
 
 /**
  * Work with template literals and expressions
@@ -103,4 +109,4 @@ export function templateWithExpression (a, b) {
   // TODO: Return a template literal with the sum calculated inside ${}
   return `The sum of ${a} and ${b} is ${a + b}`
 }
-templateWithExpression(9, 3);
+templateWithExpression(9, 3)

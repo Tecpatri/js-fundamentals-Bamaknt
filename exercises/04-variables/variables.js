@@ -11,15 +11,15 @@
 export function createUserProfile (name, age) {
   // TODO: Declare a const variable 'user' with an object containing name, age, and isActive
   // TODO: Return the user object
-  let user = {
-    name:'Martin',
+  const user = {
+    name: 'Martin',
     age: 28,
-    'isActive': true
-  };
-  return user;
-
+    isActive: true
+  }
+  return user
 }
-console.log(createUserProfile());
+console.log(createUserProfile())
+
 /**
  * Update a counter using let
  *
@@ -31,11 +31,12 @@ export function updateCounter (increment) {
   // TODO: Declare a let variable 'counter' set to 0
   // TODO: Add the increment value to counter
   // TODO: Return the counter value
-  let counter = 0;
-  counter = counter + increment;
-  return counter;
+  let counter = 0
+  counter = counter + increment
+  return counter
 }
-console.log(updateCounter(2));
+console.log(updateCounter(2))
+
 /**
  * Calculate rectangle area using multiple variable declarations
  *
@@ -50,9 +51,10 @@ export function calculateRectangleArea (width, height) {
   // TODO: Return the area (width * height)
   // const width = 5, height = 8;
 
-  return width * height;
+  return width * height
 }
-console.log(calculateRectangleArea(5, 8));
+console.log(calculateRectangleArea(5, 8))
+
 /**
  * Declare constants that cannot be reassigned
  *
@@ -65,11 +67,12 @@ export function declareConstants () {
   // TODO: Declare MAX_USERS as const, set to 100
   // TODO: Declare APP_NAME as const, set to 'MyApp'
   // TODO: Return an object with both: { MAX_USERS, APP_NAME }
-  const MAX_USERS = 100;
-  const APP_NAME = 'MyApp';
-  return { MAX_USERS, APP_NAME };
+  const MAX_USERS = 100
+  const APP_NAME = 'MyApp'
+  return { MAX_USERS, APP_NAME }
 }
-console.log(declareConstants());
+console.log(declareConstants())
+
 /**
  * Use descriptive variable names following camelCase convention
  *
@@ -83,11 +86,12 @@ export function useDescriptiveNames (firstName, lastName) {
   // TODO: Declare 'fullName' as a const - combine firstName + " " + lastName
   // TODO: Declare 'nameLength' as a const - get the length of fullName
   // TODO: Return { fullName, nameLength }
-  const fullName = firstName + " " + lastName;
-  const nameLength = 13;
+  const fullName = firstName + ' ' + lastName
+  const nameLength = 13
   return { fullName, nameLength }
 }
-useDescriptiveNames('Martin', 'Daflon');
+useDescriptiveNames('Martin', 'Daflon')
+
 /**
  * Demonstrate let vs const - reassignment
  *
@@ -103,9 +107,9 @@ export function demonstrateLetVsConst (initialScore, bonusPoints) {
   // TODO: Add bonusPoints to score
   // TODO: Declare 'maxScore' as const, set to 100
   // TODO: Return { score, maxScore }
-  let score = initialScore;
-  score = score + 10;
-  let maxScore = 100;
-  return { score, maxScore };
+  let score = initialScore
+  score = score + 10
+  const maxScore = 100
+  return { score, maxScore }
 }
-demonstrateLetVsConst(70, 100);
+demonstrateLetVsConst(70, 100)
