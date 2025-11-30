@@ -8,8 +8,10 @@
 export function convertToString (value) {
   // TODO: Convert value to string using String()
   // TODO: Return { result: converted value, type: typeof converted value }
+  let value;
+  return { value.toString, typeof value}
 }
-
+convertToString();
 /**
  * Convert a value to a number using Number()
  *

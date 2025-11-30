@@ -1,26 +1,32 @@
 // TODO: Implement the functions below
 // Note: ES modules (files using import/export) are automatically in strict mode
 
+import { StrictMode } from "react"
+
 export function demonstrateStrictMode () {
   'use strict'
   // In strict mode, 'this' in a function is undefined (not window/global)
   // Return true if we're in strict mode, false otherwise
   return (function () { return this })() === undefined
 }
-
+console.log(demonstrateStrictMode())
 export function noUndeclaredVariables () {
   'use strict'
   // In strict mode, you cannot use variables without declaring them
   // This function should return a properly declared variable value
   // Declare a variable 'message' with value "strict mode works"
   // and return it
+  let message = "strict mode works"
+  return message;
 }
-
+console.log(noUndeclaredVariables());
 export function noDelete () {
   'use strict'
   // In strict mode, you cannot delete variables
   // Create a variable and try to demonstrate that deletion isn't allowed
   // Return the variable value (don't actually try to delete, just return a value)
   const value = 42
+  delete value // console declares unability to delete in strici mode
   return value
 }
+console.log(noDelete());

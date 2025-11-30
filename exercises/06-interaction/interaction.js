@@ -9,7 +9,10 @@
 export function simulateAlert (alertFn, message) {
   // TODO: Call alertFn with message
   // TODO: Return the result of alertFn (which should be undefined)
+  const result = alert (message);
+  return result;
 }
+simulateAlert();
 
 /**
  * Simulate prompt behavior
@@ -23,7 +26,15 @@ export function simulatePrompt (promptFn, question) {
   // TODO: Call promptFn with question and store result
   // TODO: If result is null, return "No input provided"
   // TODO: Otherwise, return "You entered: [result]"
+  let result = prompt (promptFn, question);
+  if (result = null) {
+    return 'No input provided'
+  } else {
+    return 'You entered' (result);
+  }
 }
+simulateAlert();
+
 
 /**
  * Simulate confirm behavior
@@ -36,8 +47,14 @@ export function simulatePrompt (promptFn, question) {
 export function simulateConfirm (confirmFn, question) {
   // TODO: Call confirmFn with question
   // TODO: Return "Confirmed" if true, "Cancelled" if false
+  let result = confirm(confirmFn, question); 
+  if (result) {
+    return "Confirmed";
+  }else {
+    return "Cancelled";
+  }
 }
-
+simulateConfirm();
 /**
  * Handle prompt cancellation
  *
@@ -52,8 +69,14 @@ export function handlePromptCancel (promptFn) {
   // TODO: If result is null, set name to "Guest"
   // TODO: Otherwise, set name to the result
   // TODO: Return "Welcome, [name]!"
+  confirm("What is your name?") = result;
+  if (result = null) {
+    return "Guest";
+  } else {
+    return result;
+  }
 }
-
+handlePromptCancel("What is your name?");
 /**
  * Combine interactions: confirm then prompt
  *
@@ -69,10 +92,20 @@ export function combineInteractions (confirmFn, promptFn) {
   // TODO: If true, call promptFn with "Enter your name:"
   // TODO: If promptFn returns null, return "Name required"
   // TODO: Otherwise return "Registered: [name]"
+  let result = confirm("Do you want to enter your name?", promptFn);
+  if (result = false) {
+    return "Registration cancelled";
+  }else if (result = true) {
+    return "Enter your name";
+  }else if (promptFn = null) {
+    return "Name required";
+  }else {
+    return "Registered";
+  }
 }
-
+combineInteractions();
 /**
- * Understand that prompt always returns a string (or null)
+ * Understand (that prompt always returns a string (or null)
  *
  * Use promptFn to ask "Enter a number:".
  * Remember: prompt returns a STRING, not a number!
@@ -86,4 +119,7 @@ export function combineInteractions (confirmFn, promptFn) {
 export function promptReturnsString (promptFn) {
   // TODO: Call promptFn with "Enter a number:"
   // TODO: Return { value: result, type: typeof result }
+  let result = prompt("Enter a number:");
+  return { result, typeof: result };
 }
+promptReturnsString();
