@@ -3,28 +3,29 @@
 export function sum (a, b) {
   // Return the sum of two numbers
   // Remember to use semicolons properly
-  return a + b;
+  return a + b
 }
-console.log(sum(7, 5));
+console.log(sum(7, 5))
 
 export function multiStatement (x) {
   // Create multiple statements (at least 2)
   // First, multiply x by 2 and store in a variable
   // Then, add 10 to that variable
   // Finally, return the result
-  let result = x * 2;
-  result = result + 10;
-  return result;
+  let result = x * 2
+  result = result + 10
+  return result
 }
-console.log(multiStatement(5));
+console.log(multiStatement(5))
 export function withComments (value) {
   // Add a single-line comment explaining what the next line does
   // Then return the value multiplied by 3
 
   // The next line will return the result as the value * 3
-  return value * 3;
+  return value * 3
 }
-withComments(4);
+withComments(4)
+
 export function withMultilineComment (a, b, c) {
   // Add a multi-line comment (/* ... */) that explains this function
   // takes three numbers and returns their sum
@@ -34,6 +35,6 @@ export function withMultilineComment (a, b, c) {
   let num3;
   return sum
   */
-  return a + b + c;
+  return a + b + c
 }
-console.log(withMultilineComment(4, 5, 6));
+console.log(withMultilineComment(4, 5, 6))

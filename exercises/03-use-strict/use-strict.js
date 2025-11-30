@@ -26,7 +26,7 @@ export function noDelete () {
   // Create a variable and try to demonstrate that deletion isn't allowed
   // Return the variable value (don't actually try to delete, just return a value)
   const value = 42
-  delete value // console declares unability to delete in strici mode
+  delete value // console declares unabil
   return value
 }
 console.log(noDelete());
