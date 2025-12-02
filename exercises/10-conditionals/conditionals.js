@@ -20,7 +20,19 @@
  */
 export function getGrade (score) {
   // TODO: Use if/else if/else to return the appropriate letter grade
+  if (score >= 90 && score <= 100) {
+    return 'A'
+  } else if (score >= 80 && score < 90) {
+    return 'B'
+  } else if (score >= 70 && score < 80) {
+    return 'C'
+  } else if (score >= 60 && score < 70) {
+    return 'D'
+  } else {
+    return 'F'
+  }
 }
+getGrade(85)
 
 /**
  * Returns the absolute value of a number
@@ -36,7 +48,13 @@ export function getAbsoluteValue (num) {
   // TODO: Use an if/else statement
   // If num is negative, return -num
   // Otherwise, return num
+  if (num < 0) {
+    return -num
+  } else {
+    return num
+  }
 }
+getAbsoluteValue(-10)
 
 /**
  * Checks if a person can vote based on age
@@ -48,7 +66,13 @@ export function getAbsoluteValue (num) {
  */
 export function canVote (age) {
   // TODO: Use an if/else statement to return true or false
+  if (age >= 18) {
+    return true
+  } else {
+    return false
+  }
 }
+canVote(16)
 
 /**
  * Returns the larger of two numbers using the ternary operator
@@ -62,7 +86,9 @@ export function canVote (age) {
 export function getMax (a, b) {
   // TODO: Use the ternary operator (? :)
   // Format: condition ? valueIfTrue : valueIfFalse
+  return (a > b) ? a : b
 }
+getMax(7, 12)
 
 /**
  * Classic FizzBuzz problem
@@ -85,7 +111,17 @@ export function getFizzBuzz (num) {
   // IMPORTANT: Check for divisibility by both 3 AND 5 first!
   // Hint: Use the % (modulo) operator to check divisibility
   // A number is divisible by 3 if num % 3 === 0
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'FizzBuzz'
+  } else if (num % 3 === 0) {
+    return 'Fizz'
+  } else if (num % 5 === 0) {
+    return 'Buzz'
+  } else {
+    return num.toString()
+  }
 }
+getFizzBuzz(30)
 
 /**
  * Checks the sign of a number
@@ -103,7 +139,15 @@ export function getFizzBuzz (num) {
  */
 export function checkSign (num) {
   // TODO: Use if/else if/else to check the sign
+  if (num > 0) {
+    return 'positive'
+  } else if (num < 0) {
+    return 'negative'
+  } else {
+    return 'zero'
+  }
 }
+checkSign(-7)
 
 /**
  * Checks if a value is truthy or falsy
@@ -117,7 +161,13 @@ export function checkSign (num) {
 export function checkTruthiness (value) {
   // TODO: Use an if/else statement
   // If value is truthy, return 'truthy', else return 'falsy'
+  if (value) {
+    return 'truthy'
+  } else {
+    return 'falsy'
+  }
 }
+checkTruthiness('world')
 
 /**
  * Returns a discount message based on purchase amount
@@ -134,4 +184,12 @@ export function checkTruthiness (value) {
  */
 export function getDiscountMessage (amount) {
   // TODO: Use if/else if/else statements
+  if (amount >= 100) {
+    return '20% discount'
+  } else if (amount >= 50 && amount < 100) {
+    return '10% discount'
+  } else {
+    return 'No discount'
+  }
 }
+getDiscountMessage(45)

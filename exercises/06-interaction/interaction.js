@@ -69,14 +69,13 @@ export function handlePromptCancel (promptFn) {
   // TODO: If result is null, set name to "Guest"
   // TODO: Otherwise, set name to the result
   // TODO: Return "Welcome, [name]!"
-  confirm("What is your name?") = result;
-  if (result = null) {
-    return "Guest";
+  if confirm('What is your name?') = null {
+    return 'Guest'
   } else {
     return result;
   }
 }
-handlePromptCancel("What is your name?");
+handlePromptCancel('What is your name?');
 /**
  * Combine interactions: confirm then prompt
  *

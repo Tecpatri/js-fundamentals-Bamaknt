@@ -14,7 +14,9 @@
  */
 export function add (a, b) {
   // TODO: Return the sum of a and b
+  return a + b
 }
+add(2, 3)
 
 /**
  * Returns the difference of two numbers
@@ -26,7 +28,9 @@ export function add (a, b) {
  */
 export function subtract (a, b) {
   // TODO: Return the difference of a and b
+  return a - b
 }
+subtract(10, 3)
 
 /**
  * Returns the product of two numbers
@@ -38,7 +42,9 @@ export function subtract (a, b) {
  */
 export function multiply (a, b) {
   // TODO: Return the product of a and b
+  return a * b
 }
+multiply(4, 5)
 
 /**
  * Returns the quotient of two numbers
@@ -50,7 +56,9 @@ export function multiply (a, b) {
  */
 export function divide (a, b) {
   // TODO: Return the quotient of a divided by b
+  return a / b
 }
+divide(10, 2)
 
 /**
  * Returns the remainder of dividing a by b
@@ -62,7 +70,9 @@ export function divide (a, b) {
  */
 export function remainder (a, b) {
   // TODO: Return the remainder using the % operator
+  return a % b
 }
+remainder(10, 3)
 
 /**
  * Returns a raised to the power of b
@@ -74,6 +84,7 @@ export function remainder (a, b) {
  */
 export function power (a, b) {
   // TODO: Return a raised to the power of b using the ** operator
+  return a ** b
 }
 
 /**
@@ -86,7 +97,9 @@ export function power (a, b) {
  */
 export function concatenate (str1, str2) {
   // TODO: Concatenate str1 and str2 with a space between them
+  return str1 + ' ' + str2
 }
+concatenate('Hello', 'World')
 
 /**
  * Converts a value to a number using unary plus
@@ -98,7 +111,9 @@ export function concatenate (str1, str2) {
  */
 export function convertToNumber (value) {
   // TODO: Use unary plus (+) to convert value to a number
+  return +value
 }
+convertToNumber('123')
 
 /**
  * Increments the value property of an object using the prefix increment operator
@@ -110,7 +125,9 @@ export function convertToNumber (value) {
  */
 export function incrementByRef (obj) {
   // TODO: Use prefix increment (++obj.value) and return the new value
+  return ++obj.value
 }
+incrementByRef({ value: 5 })
 
 /**
  * Adds two numbers using the compound assignment operator
@@ -123,7 +140,9 @@ export function incrementByRef (obj) {
  */
 export function addAndAssign (obj, num) {
   // TODO: Use += to add num to obj.value and return the new value
+  return (obj.value += num)
 }
+addAndAssign({ value: 10 }, 5)
 
 /**
  * Converts string numbers to actual numbers and returns their sum
@@ -137,4 +156,6 @@ export function addAndAssign (obj, num) {
  */
 export function sumStringNumbers (str1, str2) {
   // TODO: Use unary plus (+) to convert both strings to numbers and return their sum
+  return +str1 + +str2
 }
+sumStringNumbers('3', '5')

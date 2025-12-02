@@ -12,13 +12,13 @@ export function createUserProfile (name, age) {
   // TODO: Declare a const variable 'user' with an object containing name, age, and isActive
   // TODO: Return the user object
   const user = {
-    name: 'Martin',
-    age: 28,
+    name,
+    age,
     isActive: true
   }
   return user
 }
-console.log(createUserProfile())
+console.log(createUserProfile('Martin', 28))
 
 /**
  * Update a counter using let
@@ -108,7 +108,7 @@ export function demonstrateLetVsConst (initialScore, bonusPoints) {
   // TODO: Declare 'maxScore' as const, set to 100
   // TODO: Return { score, maxScore }
   let score = initialScore
-  score = score + 10
+  score = score + bonusPoints
   const maxScore = 100
   return { score, maxScore }
 }

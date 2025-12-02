@@ -17,7 +17,9 @@
 export function getFirstTruthy (a, b, c) {
   // TODO: Chain OR operators to return first truthy value
   // Format: a || b || c
+  return a || b || c
 }
+getFirstTruthy(1, 2, 3)
 
 /**
  * Returns the last value if all three are truthy, otherwise returns first falsy
@@ -34,7 +36,9 @@ export function getLastTruthy (a, b, c) {
   // TODO: Chain AND operators
   // Format: a && b && c
   // Remember: AND returns first falsy or last value if all truthy
+  return a && b && c
 }
+getLastTruthy(1, 0, 3)
 
 /**
  * Checks if a user has access (must be logged in AND active)
@@ -47,7 +51,9 @@ export function getLastTruthy (a, b, c) {
  */
 export function hasAccess (isLoggedIn, isActive) {
   // TODO: Use AND operator to check both conditions
+  return isLoggedIn && isActive
 }
+hasAccess(true, false)
 
 /**
  * Checks if a person can drive
@@ -62,7 +68,9 @@ export function hasAccess (isLoggedIn, isActive) {
  */
 export function canDrive (hasLicense, isSober, isAdult) {
   // TODO: Use AND operator to check all three conditions
+  return hasLicense && isSober && isAdult
 }
+canDrive(true, true, false)
 
 /**
  * Returns the boolean negation of a value
@@ -75,7 +83,9 @@ export function canDrive (hasLicense, isSober, isAdult) {
  */
 export function negate (value) {
   // TODO: Use the NOT operator (!) to negate the value
+  return !value
 }
+negate(false)
 
 /**
  * Returns the value, or defaultValue if value is falsy
@@ -91,4 +101,6 @@ export function negate (value) {
 export function setDefault (value, defaultValue) {
   // TODO: Use OR operator to return value or defaultValue
   // Format: value || defaultValue
+  return value || defaultValue
 }
+setDefault('', 'Anonymous')
