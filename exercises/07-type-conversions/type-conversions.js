@@ -8,11 +8,10 @@
 export function convertToString (value) {
   // TODO: Convert value to string using String()
   // TODO: Return { result: converted value, type: typeof converted value }
-  const x = value
-  const y = String(value)
-  const z = typeof (String(value))
+  const a = String(value)
+  const b = typeof (String(value))
 
-  return { y, z }
+  return { a, b }
 }
 console.log(convertToString(123))
 
@@ -30,11 +29,10 @@ console.log(convertToString(123))
 export function convertToNumber (value) {
   // TODO: Convert value to number using Number()
   // TODO: Return the result
-  const x = value
-  const y = Number(value)
-  const z = typeof (Number(value))
+  const x = Number(value)
+  const y = typeof (Number(value))
 
-  return { y, z }
+  return { x, y }
 }
 console.log(convertToNumber('701'))
 
@@ -48,7 +46,6 @@ console.log(convertToNumber('701'))
 export function convertToBoolean (value) {
   // TODO: Convert value to boolean using Boolean()
   // TODO: Return the result
-  const x = value
   const y = Boolean(value)
   const z = typeof (Boolean(value))
 
@@ -109,7 +106,6 @@ demonstrateImplicitConversion()
 export function isFalsy (value) {
   // TODO: Return true if value is falsy, false if truthy
   // Hint: Use !value or !Boolean(value)
-  const x = value
   if (!value) {
     return true
   } else {
