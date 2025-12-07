@@ -1,18 +1,21 @@
 // TODO: Create an arrow function called 'square' that takes a single parameter
 // and returns its square. Use the short syntax (no parentheses, implicit return)
+
+import { sum } from "../02-code-structure/code-structure"
+
 // Example: square(5) should return 25
-export const square = null
+export const square = (x) => x ** 2
 
 // TODO: Create an arrow function called 'greet' that takes a name parameter
 // and returns "Hello, [name]!" using a template literal
 // Use the short syntax with implicit return
 // Example: greet('Alice') should return 'Hello, Alice!'
-export const greet = null
+export const greet = (name) => `Hello, ${name}!`
 
 // TODO: Create an arrow function called 'add' that takes two parameters
 // and returns their sum. Multiple parameters require parentheses
 // Example: add(3, 7) should return 10
-export const add = null
+export const add = (x, y) => sum(x, y)
 
 // TODO: Create an arrow function called 'getMax' that takes two parameters
 // and returns the larger one. Use a multi-line arrow function with curly braces

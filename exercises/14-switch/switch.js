@@ -13,7 +13,14 @@ export function getDayType (day) {
   // TODO: Use a switch statement to check the day
   // Group 'Sat' and 'Sun' together to return 'weekend'
   // Use default case to return 'weekday' for all other days
+  switch (day) {
+    case 'Sat' && 'Sun':
+      return 'weekend'
+    default:
+      return 'weekday'
+  }
 }
+getDayType('Fri')
 
 /**
  * Converts a numeric score to a letter grade.
@@ -39,7 +46,25 @@ export function getGrade (score) {
   // This allows you to handle ranges with switch
   // Don't forget break statements!
   // Hint: case 10 and case 9 should both return 'A'
+  switch (Math.floor(score / 10)) {
+    case 10:
+    case 9:
+      return 'A'
+      break
+    case 8:
+      return '8'
+      break
+    case 7:
+      return 'C'
+      break
+    case 6:
+      return 'D'
+      break
+    default:
+      return 'F'
+  }
 }
+getGrade(75)
 
 /**
  * Returns the season for a given month number.
@@ -63,7 +88,32 @@ export function getSeasonByMonth (month) {
   // Group months 12, 1, 2 for Winter
   // Group months 3, 4, 5 for Spring, etc.
   // Use default case to return 'Invalid month' for invalid month numbers
+  switch (month) {
+    case 12:
+    case 1:
+    case 2:
+      return 'Winter'
+      break
+    case 3:
+    case 4:
+    case 5:
+      return 'Spring'
+      break
+    case 6:
+    case 7:
+    case 8:
+      return 'Summer'
+      break
+    case 9:
+    case 10:
+    case 11:
+      return 'Fall'
+      break
+    default:
+      return 'Invalid month'
+  }
 }
+getSeasonByMonth(4)
 
 /**
  * Returns a human-readable message for HTTP status codes.
@@ -86,7 +136,30 @@ export function interpretStatusCode (code) {
   // 404: 'Not Found'
   // 500: 'Internal Server Error'
   // default: 'Unknown Status'
+  switch (code) {
+    case 200:
+      return 'OK'
+      break
+    case 201:
+      return 'Created'
+      break
+    case 400:
+      return 'Bad Request'
+      break
+    case 401:
+      return 'Unauthorized'
+      break
+    case 404:
+      return 'Not Found'
+      break
+    case 500:
+      return 'Internal Server Error'
+      break
+    default:
+      return 'Unknown Status'
+  }
 }
+interpretStatusCode(201)
 
 /**
  * Calculates shipping cost based on country.
@@ -111,7 +184,24 @@ export function calculateShipping (country) {
   // Group CA and MX together for $10 shipping
   // Group UK, FR, DE together for $15 shipping
   // Use default for $25 shipping
+  switch (country) {
+    case 'US':
+      return 5
+      break
+    case 'CA':
+    case 'MX':
+      return 10
+      break
+    case 'UK':
+    case 'FR':
+    case 'DE':
+      return 15
+      break
+    default:
+      return 25
+  }
 }
+calculateShipping('MX')
 
 /**
  * Compares two values using switch to demonstrate strict equality.
@@ -133,4 +223,15 @@ export function compareValues (a, b) {
   // If they don't match but a == b (loose equality): return { match: false, message: 'Different types' }
   // Otherwise: return { match: false, message: 'Different values' }
   // Hint: You'll need an if statement in the default case to distinguish the last two scenarios
+  switch (a) {
+    case b:
+      return { match: true, message: 'Exact match' }
+      break 
+    default:
+      if (a == b) {
+        return { match: false, message: 'Different types' }
+      } else {
+        return { match: false, message: 'Different values' }
+      }
+  }
 }
