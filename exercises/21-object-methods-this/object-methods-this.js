@@ -11,7 +11,14 @@ export function createPersonWithMethod (name) {
   // TODO: Create an object with name property and greet method
   // TODO: The greet method should use 'this.name'
   // TODO: Return the object
+  const person = {
+    name: "",
+    greet() {
+      return `Hi, i am ${this.name}!`
+    }
+  }
 }
+person.greet("Martin")
 
 /**
  * Access 'this' in a method
@@ -24,9 +31,12 @@ export function createUser (name) {
     name,
     getName () {
       // TODO: Return this.name
+      return `Hi, i respond to ${this.name}`
     }
   }
 }
+const p = createUser("Mozart")
+p.getName()
 
 /**
  * Method shorthand syntax
@@ -37,7 +47,7 @@ export function createUser (name) {
  */
 export function createCounter () {
   // TODO: Return object with count: 0 and increment method using shorthand
-  // TODO: increment() should do this.count++
+  // TODO: increment() should do this.count++    
 }
 
 /**

@@ -156,8 +156,8 @@ export function createMultiplicationTable (size) {
     const child = []
     for (let j = 1; j <= size; j++) {
       // the goal is that each element of child should be the product of row * column
-      child.push(i * j)
-    }
+      child.push(i * j) 
+    } 
     // let's say size = 3; by the end of the second loop child should look like this: [1*1, 1*2, 1*3]
     // so child will be [1,2,3]
     result.puth(child)
