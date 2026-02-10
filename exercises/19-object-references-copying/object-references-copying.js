@@ -9,6 +9,9 @@ export function demonstrateReference (user) {
   // TODO: Create a new variable admin that points to the same object as user
   // TODO: Set admin.role to 'administrator'
   // TODO: Return admin (both user and admin should reference the same object)
+  const admin = user;
+  admin.role = 'administrator';
+  return admin;
 }
 
 /**
@@ -19,6 +22,11 @@ export function demonstrateReference (user) {
  */
 export function comparePrimitives (a, b) {
   // TODO: Return true if a equals b
+  if ( a == b ) {
+    return true;
+  }else {
+    return false;
+  }
 }
 
 /**
@@ -29,6 +37,9 @@ export function comparePrimitives (a, b) {
  */
 export function compareObjectReferences (obj1, obj2) {
   // TODO: Return true if obj1 and obj2 reference the same object
+  if ( obj1 === obj2) {
+    return true;
+  }else return false;
 }
 
 /**
@@ -39,8 +50,11 @@ export function compareObjectReferences (obj1, obj2) {
  * Return a new variable that references the original object.
  */
 export function notACopy (original) {
-  // TODO: Create a variable 'copy' that references original
-  // TODO: Return copy (it's NOT actually a copy, just another reference)
+  // 
+  let x = 5;
+  let y = x;
+  y = 6;
+  return y; // 
 }
 
 /**

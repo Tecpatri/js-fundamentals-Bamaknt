@@ -5,9 +5,10 @@ export function demonstrateStrictMode () {
   'use strict'
   // In strict mode, 'this' in a function is undefined (not window/global)
   // Return true if we're in strict mode, false otherwise
-  return (function () { return this })() === undefined
+  return this === undefined
 }
-console.log(demonstrateStrictMode())
+demonstrateStrictMode()
+
 export function noUndeclaredVariables () {
   'use strict'
   // In strict mode, you cannot use variables without declaring them
@@ -17,7 +18,7 @@ export function noUndeclaredVariables () {
   const message = 'strict mode works'
   return message
 }
-console.log(noUndeclaredVariables())
+noUndeclaredVariables()
 
 export function noDelete () {
   'use strict'
@@ -27,5 +28,6 @@ export function noDelete () {
   const value = 42
 
   return value
+  
 }
-console.log(noDelete())
+noDelete()

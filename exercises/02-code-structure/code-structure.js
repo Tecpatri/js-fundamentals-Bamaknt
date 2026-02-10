@@ -5,7 +5,7 @@ export function sum (a, b) {
   // Remember to use semicolons properly
   return a + b
 }
-console.log(sum(7, 5))
+sum(7, 5)
 
 export function multiStatement (x) {
   // Create multiple statements (at least 2)
@@ -16,15 +16,16 @@ export function multiStatement (x) {
   result = result + 10
   return result
 }
-console.log(multiStatement(5))
+multiStatement(5)
+
 export function withComments (value) {
   // Add a single-line comment explaining what the next line does
   // Then return the value multiplied by 3
 
-  // The next line will return the result as the value * 3
+  // The next line will return the result as (value * 3)
   return value * 3
 }
-withComments(4)
+withComments(4) // returns 12
 
 export function withMultilineComment (a, b, c) {
   // Add a multi-line comment (/* ... */) that explains this function
@@ -37,4 +38,4 @@ export function withMultilineComment (a, b, c) {
   */
   return a + b + c
 }
-console.log(withMultilineComment(4, 5, 6))
+withMultilineComment(4, 5, 6)

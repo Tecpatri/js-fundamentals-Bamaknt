@@ -18,7 +18,7 @@ export function createUserProfile (name, age) {
   }
   return user
 }
-console.log(createUserProfile('Martin', 28))
+createUserProfile('Martin', 28)
 
 /**
  * Update a counter using let
@@ -35,7 +35,7 @@ export function updateCounter (increment) {
   counter = counter + increment
   return counter
 }
-console.log(updateCounter(2))
+updateCounter(2)
 
 /**
  * Calculate rectangle area using multiple variable declarations
@@ -50,10 +50,11 @@ export function calculateRectangleArea (width, height) {
   // TODO: Declare width and height as const variables in ONE statement
   // TODO: Return the area (width * height)
   // const width = 5, height = 8;
+  // const width = 5, height = 8;
 
   return width * height
 }
-console.log(calculateRectangleArea(5, 8))
+calculateRectangleArea(5, 8)
 
 /**
  * Declare constants that cannot be reassigned
@@ -71,7 +72,7 @@ export function declareConstants () {
   const APP_NAME = 'MyApp'
   return { MAX_USERS, APP_NAME }
 }
-console.log(declareConstants())
+declareConstants()
 
 /**
  * Use descriptive variable names following camelCase convention
@@ -87,10 +88,10 @@ export function useDescriptiveNames (firstName, lastName) {
   // TODO: Declare 'nameLength' as a const - get the length of fullName
   // TODO: Return { fullName, nameLength }
   const fullName = firstName + ' ' + lastName
-  const nameLength = 13
+  const nameLength = 8
   return { fullName, nameLength }
 }
-useDescriptiveNames('Martin', 'Daflon')
+useDescriptiveNames('Jane', 'Smith')
 
 /**
  * Demonstrate let vs const - reassignment
