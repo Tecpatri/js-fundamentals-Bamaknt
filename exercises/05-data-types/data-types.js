@@ -20,7 +20,7 @@ identifyType('Hello')
  */
 export function createTemplateString (name, age) {
   // TODO: Create and return a template literal string with name and age
-  const message = `My name is ${name} and i am ${age} years old `
+  const message = `Hello, ${name}! You are ${age} years old.`
   return message
 }
 createTemplateString('Martin', 38)
@@ -38,11 +38,15 @@ export function checkSpecialNumbers (value) {
   // TODO: Check if value is Infinity (use !Number.isFinite() and typeof === 'number')
   // TODO: Check if value is NaN (use Number.isNaN())
   // TODO: Return { isInfinity: ..., isNaN: ... }
-  const isInfinity = !Number.isFinite(value) && typeof value === 'number'
+  
+  const isInfinity = (!Number.isFinite(value) && typeof value === 'number')
   const isNaN = Number.isNaN(value)
-  return { isInfinity, isNaN }
+  return {
+  isInfinity,
+  isNaN
+ }
 }
-checkSpecialNumbers(52)
+checkSpecialNumbers(-52)
 
 /**
  * Demonstrate all 8 JavaScript data types
@@ -89,10 +93,10 @@ demonstrateAllTypes()
 export function differentiateNullUndefined () {
   // TODO: Return an object with the four properties described above
   return {
-    nullType: 'object',
-    undefinedType: undefined,
-    nullEqualsUndefined: 'null == undefined',
-    nullStrictEqualsUndefined: 'null === undefined'
+    nullType: typeof null,
+    undefinedType: typeof undefined,
+    nullEqualsUndefined: null == undefined,
+    nullStrictEqualsUndefined: null === undefined
   }
 }
 differentiateNullUndefined()
@@ -107,6 +111,6 @@ differentiateNullUndefined()
  */
 export function templateWithExpression (a, b) {
   // TODO: Return a template literal with the sum calculated inside ${}
-  return `The sum of ${a} and ${b} is ${a + b}`
+  return `The sum of ${a} and ${b} is ${a + b}.`
 }
 templateWithExpression(9, 3)

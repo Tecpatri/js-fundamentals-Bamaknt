@@ -9,11 +9,9 @@ export function convertToString (value) {
   // TODO: Convert value to string using String()
   // TODO: Return { result: converted value, type: typeof converted value }
   const a = String(value)
-  const b = typeof (String(value))
-
-  return { a, b }
+  return { a, typeof: a }
 }
-console.log(convertToString(123))
+convertToString(123)
 
 /**
  * Convert a value to a number using Number()
@@ -29,10 +27,9 @@ console.log(convertToString(123))
 export function convertToNumber (value) {
   // TODO: Convert value to number using Number()
   // TODO: Return the result
-  const x = Number(value)
-  const y = typeof (Number(value))
+  let result = Number(value)
 
-  return { x, y }
+  return result
 }
 console.log(convertToNumber('701'))
 
@@ -46,10 +43,9 @@ console.log(convertToNumber('701'))
 export function convertToBoolean (value) {
   // TODO: Convert value to boolean using Boolean()
   // TODO: Return the result
-  const y = Boolean(value)
-  const z = typeof (Boolean(value))
+  let result = Boolean(value)
 
-  return { y, z }
+  return result
 }
 console.log(convertToBoolean(123))
 
@@ -86,7 +82,7 @@ handleConversionEdgeCases()
  */
 export function demonstrateImplicitConversion () {
   // TODO: Return an object with the four implicit conversions above
-  return {
+  return Object = {
     stringPlusNumber: '5' + 3,
     stringMinusNumber: '5' - 3,
     booleanToNumber: true + 1,

@@ -59,7 +59,7 @@ export function isLessOrEqual (a, b) {
     return false
   }
 }
-isLessOrEqual(5, 10)
+isLessOrEqual(10, 5)
 
 /**
  * Compares two strings lexicographically
@@ -101,7 +101,7 @@ compareStrings('apple', 'banana')
 export function isLooselyEqual (a, b) {
   // TODO: Return true if a and b are loosely equal using ==
   // Note: This is for educational purposes. Use === in real code!
-  if (a === b) {
+  if (a == b) {
     return true
   } else {
     return false
@@ -128,7 +128,7 @@ export function isBetween (x, min, max) {
     return false
   }
 }
-isBetween(5, 1, 10)
+isBetween(1, 5, 10)
 
 /**
  * Checks if value is null or undefined

@@ -64,13 +64,13 @@ export function findFirstNegative (numbers) {
   // Check if each number is negative (< 0)
   // If negative, use break to exit the loop and return the number
   // If no negative number is found, return null
-  if (numbers[i] < 0) {
-    for (let i = 0; i < numbers.length; i++) {
-      break
-    }
-    return numbers[i]
-  } else {
-    return null
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers < 0) {
+        break
+        return numbers
+    } else {
+      return null
+    }         
   }
 }
 console.log(findFirstNegative([1, 2, -4, -5]))
@@ -160,7 +160,7 @@ export function createMultiplicationTable (size) {
     } 
     // let's say size = 3; by the end of the second loop child should look like this: [1*1, 1*2, 1*3]
     // so child will be [1,2,3]
-    result.puth(child)
+    result.push(child)
   }
   // now, result
   return result

@@ -66,7 +66,24 @@ export function notACopy (original) {
 export function shallowCopy (original) {
   // TODO: Use Object.assign to copy properties to a new empty object
   // TODO: Return the new object
+
+  /*
+  let user1 = { name: 'Martin', age: 38, grade: 'B'}
+  let user2 = {}
+
+  Object.assign(user2, user1)
+
+  alert(user2.name)
+  */
+  const original = { name: 'Alex', work: { staff: 'Drive' } }
+
+  const copy = {...original }
+
+  copy.name = 'John'
+  copy.work.staff = 'Supervisor'
+
 }
+shallowCopy(original)
 
 /**
  * Shallow copy with spread operator
@@ -77,6 +94,14 @@ export function shallowCopy (original) {
 export function shallowCopyWithSpread (original) {
   // TODO: Use spread operator to create a copy
   // TODO: Return {...original}
+  const original = { name: 'Alex', work: { staff: 'Drive' } }
+
+  const copy = { ...original }
+
+  copy.name = 'Hulk'
+  copy.work.staff = 'Supervisor'
+
+  return { ...original }
 }
 
 /**
@@ -92,6 +117,14 @@ export function demonstrateShallowCopyProblem (user) {
   // TODO: Create a shallow copy of user
   // TODO: Modify user.address.city to 'Boston' (this affects both objects!)
   // TODO: Return the copy
+  const user = { name: 'Ben', address: { city: 'Yop'} }
+
+  const copy = { ...user }
+
+  copy.name = 'Bab'
+  copy.address.city = 'Boston'
+
+  return { ...user }
 }
 
 /**
@@ -103,6 +136,13 @@ export function demonstrateShallowCopyProblem (user) {
 export function deepCopy (original) {
   // TODO: Use structuredClone to create a deep copy
   // TODO: Return the deep copy
+  let original = { name: 'Bob', items: { pc: 1, tablet: 1 } }
+
+  let clone = structuredClone(original)
+
+  return structuredClone(original)
+
+  alert(clone.name.items)
 }
 
 /**
@@ -115,6 +155,13 @@ export function deepCopy (original) {
 export function mergeObjects (target, source) {
   // TODO: Use Object.assign to merge source into target
   // TODO: Return target
+  let source = { job: 'Dev', items: { pc: 1, laptop: 1, web: true } }
+
+  let target = { name: 'Art', sizes: { height: 183, width: 60 } }
+
+  Object.assign(target, source)
+
+  return target
 }
 
 /**
@@ -127,6 +174,15 @@ export function mergeObjects (target, source) {
 export function mergeMultiple (obj1, obj2, obj3) {
   // TODO: Use Object.assign to merge all three into a new empty object
   // TODO: Return the new merged object
+  let obj1 = { title1: 'Chief'}
+  let obj2 = { title2: 'Secretary'}
+  let obj3 = { title3: 'Director'}
+
+  let obj4 = {}
+
+  newObject = Object.assign( {}, obj1, obj2, obj3 )
+
+  console.log(newObject)
 }
 
 /**
@@ -140,7 +196,13 @@ export function cloneAndModify (user) {
   // TODO: Create a copy using spread operator or Object.assign
   // TODO: Add status property to the copy
   // TODO: Return the modified copy
+  let user = { item: 'Jet', class: 'Fighter'}
+
+  const copiedObjectSpread = { ...user,  status: 'active' }
+
 }
+console.log('User:', user)
+console.log('Copy with spread:', copiedObjectSpread)
 
 /**
  * Test if modification affects original
@@ -153,6 +215,12 @@ export function testIndependence (obj) {
   // TODO: Create a shallow copy
   // TODO: Add a new property to the copy (e.g., test = true)
   // TODO: Return true if 'test' property doesn't exist in original
+  const obj = { first: 'Bill', rank: { second: 'Ben' } }
+
+  const copy = Object.assign({}, obj)
+  copy.test = true
+
+  return !('test' in obj)
 }
 
 /**
@@ -164,7 +232,14 @@ export function testIndependence (obj) {
 export function modifyConstObject (obj) {
   // TODO: Add modified property set to true
   // TODO: Return obj (note: obj itself is const but its properties can change)
+  const obj = { id: 'Red', status: { active: false } }
+
+  const copy = { ...obj }
+
+  copy.id = 'Green'
+  copy.status.active = true
 }
+modifyConstObject(obj)
 
 /**
  * Array of objects - reference issue
@@ -176,6 +251,11 @@ export function copyArrayOfObjects (users) {
   // TODO: Create a copy of the array (e.g., using spread operator or slice)
   // TODO: Return the new array
   // Note: The objects inside are still the same references!
+  const array = [{ pseudo: 'Lion' }]
+
+  newArray = [...array]  // spread operator
+
+  return newArray
 }
 
 /**
@@ -187,4 +267,11 @@ export function copyArrayOfObjects (users) {
 export function deepCopyArray (arr) {
   // TODO: Use structuredClone to deep copy the entire array
   // TODO: Return the deep copy
+  const arr = [{ id: 32, specialist: { title: 'Dev', grade: 'Senior'}}]
+
+  let clone = structuredClone(arr)
+
+  clone.id = 40
+  clone.specialist.grade = 'Junior'
 }
+deepCopyArray(arr)

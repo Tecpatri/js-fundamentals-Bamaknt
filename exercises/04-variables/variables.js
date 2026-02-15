@@ -88,7 +88,7 @@ export function useDescriptiveNames (firstName, lastName) {
   // TODO: Declare 'nameLength' as a const - get the length of fullName
   // TODO: Return { fullName, nameLength }
   const fullName = firstName + ' ' + lastName
-  const nameLength = 8
+  const nameLength = fullName.length
   return { fullName, nameLength }
 }
 useDescriptiveNames('Jane', 'Smith')

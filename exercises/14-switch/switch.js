@@ -14,13 +14,15 @@ export function getDayType (day) {
   // Group 'Sat' and 'Sun' together to return 'weekend'
   // Use default case to return 'weekday' for all other days
   switch (day) {
-    case 'Sat' && 'Sun':
+    case 'Sat':
+    case 'Sun':
       return 'weekend'
+      
     default:
       return 'weekday'
   }
 }
-getDayType('Fri')
+getDayType('Sat')
 
 /**
  * Converts a numeric score to a letter grade.
@@ -52,7 +54,7 @@ export function getGrade (score) {
       return 'A'
       break
     case 8:
-      return '8'
+      return 'B'
       break
     case 7:
       return 'C'
