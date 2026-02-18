@@ -8,9 +8,10 @@
  */
 export function createUser (name, age, city) {
   // TODO: Create and return an object with name, age, and city properties
-  return { name: name,  age: age, city: city }; 
+  return { name, age, city }; 
 }
 createUser('Martin', 25, 'Abuja')
+
 /**
  * Access object properties using dot notation
  *
@@ -44,10 +45,14 @@ pilot["mission"];  // returns Fighter
 export function addEmail (user, email) {
   // TODO: Add an 'email' property to the user object
   // TODO: Return the user object
-   return user;
+  
+  user.email = email
+
+  return user
+
 }
-const teacher = { firsname: "John", age: "35" };
-addEmail(teacher , teacher.email = "jhn@cs.com");
+const student = { gender: 'Female', city: 'Yop' }
+addEmail(student, "alice@example.com")
 
 /**
  * Modify an existing property
@@ -90,7 +95,7 @@ export function hasProperty (obj, propertyName) {
   return propertyName in obj;
 }
 const plane = { name: "Jet", brand: "Boeing" };
-hasProperty("plane", "brand");
+hasProperty(plane, "brand");
 
 /**
  * Create an object with computed property names
@@ -140,8 +145,10 @@ export function propertyExists (obj, prop) {
   // TODO: Use 'in' operator to check existence (not undefined check)
   return prop in obj; 
 }
+/*
 const house = { model: "triplex", price: 100000 };
 propertyExists(house, price);
+*/
 
 /**
  * Iterate over object properties
@@ -155,7 +162,7 @@ export function getKeys (obj) {
   // TODO: Add each key to the array
   // TODO: Return the array of keys
   const keys = [];
-  for (let keys in obj) {
+  for (let key in obj) {
     keys.push(key);
   }
   return keys;
@@ -194,12 +201,12 @@ sumValues(basket);
  */
 export function createCounter () {
   // TODO: Create an object with count property and increment method
-  const count = {
+  return {
     count: 0,
-    increment() {
-      this.count += 1
+    increment: function () {
+        this.count += 1
     }
-  }
+  } 
 }
 createCounter();
 
@@ -212,10 +219,9 @@ createCounter();
 export function createObjectWithMultiwordProperty () {
   // TODO: Create an object with a "likes birds" property
   // TODO: Must use quotes around the property name
-  return { "Likes biirds": true}
+  return { "likes birds": true }
 }
-const obj = createPersonShorthand();
-console.log(obj["Likes birds"]);
+createPersonShorthand();
 
 /**
  * Access multiword properties
@@ -226,11 +232,13 @@ console.log(obj["Likes birds"]);
  */
 export function getMultiwordProperty (obj, propertyName) {
   // TODO: Return obj[propertyName]
+  const user = {
+  "first name": "Bama",
+  "last name": "Konate",
+  "is admin": true
+};
+
   return obj[propertyName]
+
 }
-const student = {
-  "First name": "Hisham",
-  "Home town": "Abidjan",
-  "School name": "Moyen seminaire"
-}
-getMultiwordProperty(student["Home town"]);
+getMultiwordProperty(user, "first name")
