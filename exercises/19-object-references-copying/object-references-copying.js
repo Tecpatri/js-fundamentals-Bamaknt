@@ -40,11 +40,12 @@ export function comparePrimitives (a, b) {
  */
 export function compareObjectReferences (obj1, obj2) {
   // TODO: Return true if obj1 and obj2 reference the same object
-  if ( obj1 === obj2) {
-    return true;
-  }else return false;
-}
 
+  return obj1 === obj2
+  
+}
+//const obj1 = { gender: 'Male'}
+//const obj2 = { gender: 'Male'}
 /**
  * Create independent copy - wrong approach
  *
@@ -53,11 +54,11 @@ export function compareObjectReferences (obj1, obj2) {
  * Return a new variable that references the original object.
  */
 export function notACopy (original) {
-  // 
-  let x = 5;
-  let y = x;
-  y = 6;
-  return y; // 
+  // TODO: Create a variable 'copy' that references original
+  // TODO: Return copy (it's NOT actually a copy, just another reference)
+  const copy = original
+
+  return copy
 }
 
 /**
@@ -74,7 +75,7 @@ export function shallowCopy (original) {
   // TODO: Use Object.assign to copy properties to a new empty object
   // TODO: Return the new object
 
-  Object.assign(copy, original)
+  const copy = Object.assign({}, original)
 
   return copy
 
@@ -89,7 +90,7 @@ export function shallowCopy (original) {
 
 }
 let original = { name: 'Martin', age: 38, grade: 'B'}
-let copy = {}
+
 shallowCopy(original)
 
 /**
@@ -101,12 +102,7 @@ shallowCopy(original)
 export function shallowCopyWithSpread (original) {
   // TODO: Use spread operator to create a copy
   // TODO: Return {...original}
-  // const original = { name: 'Alex', work: { staff: 'Drive' } }
-
-  const copy = { ...original }
-
-  copy.name = 'Hulk'
-  copy.work.staff = 'Supervisor'
+  //
 
   return { ...original }
 }
@@ -127,7 +123,7 @@ export function demonstrateShallowCopyProblem (user) {
 
   const copy = { ...user }
 
-  user.address.city = 'Boston'
+  copy.address.city = 'Boston'
   
   return copy
 }
@@ -136,9 +132,9 @@ export function deepCopy (original) {
   // TODO: Use structuredClone to create a deep copy
   // TODO: Return the deep copy
 
-  let clone = structuredClone(original)
+  const copy = structuredClone(original)
 
-  return clone
+  return copy
 }
  
 /**
@@ -169,12 +165,11 @@ let target = { name: 'Art', sizes: { height: 183, width: 60 } }
 export function mergeMultiple (obj1, obj2, obj3) {
   // TODO: Use Object.assign to merge all three into a new empty object
   // TODO: Return the new merged object
+
   
-  let obj4 = {}
+  const copy = Object.assign( {}, obj1, obj2, obj3 )
 
-  newObject = Object.assign( {}, obj1, obj2, obj3 )
-
-  console.log(newObject)
+  return copy
 }
 let obj1 = { title1: 'Chief'}
 let obj2 = { title2: 'Secretary'}
@@ -192,14 +187,14 @@ export function cloneAndModify (user) {
   // TODO: Add status property to the copy
   // TODO: Return the modified copy
   
-  const copiedObjectSpread = { ...user,  status: 'active' }
+  const copy = { ...user }
 
-  return 
+  copy.status = 'active'
+
+  return copy
 
 }
-let user = { item: 'Jet', class: 'Fighter'}
-console.log('User:', user)
-console.log('Copy with spread:', copiedObjectSpread)
+
 
 /**
  * Test if modification affects original
@@ -231,15 +226,12 @@ export function modifyConstObject (obj) {
   // TODO: Add modified property set to true
   // TODO: Return obj (note: obj itself is const but its properties can change)
   
-  const copy = { ...obj }
+  obj.modified = true
 
   return obj
 
 }
-const obj = { id: 'Red', status: { active: false } }
-copy.id = 'Green'
-copy.status.active = true
-modifyConstObject(obj)
+
 
 /**
  * Array of objects - reference issue
@@ -252,11 +244,8 @@ export function copyArrayOfObjects (users) {
   // TODO: Return the new array
   // Note: The objects inside are still the same references!
 
-  const array = [{ pseudo: 'Lion' }]
-
-  newArray = [...array]  // spread operator
-
-  return newArray
+  
+  return  [...users]  // spread operator
 }
 
 /**
@@ -269,10 +258,9 @@ export function deepCopyArray (arr) {
   // TODO: Use structuredClone to deep copy the entire array
   // TODO: Return the deep copy
   
-  let clone = structuredClone(arr)
+  return structuredClone(arr)
 
-  clone.id = 40
-  clone.specialist.grade = 'Junior'
+ 
 }
 const arr = [{ id: 32, specialist: { title: 'Dev', grade: 'Senior'}}]
 
