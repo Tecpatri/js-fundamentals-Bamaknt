@@ -8,6 +8,9 @@
 export function makeUnreachable (user) {
   // TODO: Set user to null
   // TODO: Return null
+
+  user = null
+  return null
 }
 
 /**
@@ -21,6 +24,15 @@ export function countReferences (obj, variables) {
   // TODO: Count how many items in variables array reference obj
   // TODO: Use === to compare references
   // TODO: Return the count
+
+  let count = 0
+
+  for (let i = 0; i < variables.length; i++) {
+    if (variables[i] === obj) {
+      count++
+    }
+  }
+  return count
 }
 
 /**
@@ -33,6 +45,9 @@ export function countReferences (obj, variables) {
 export function breakChain (obj) {
   // TODO: Set obj.next to null
   // TODO: Return obj
+
+  obj.next = null
+  return obj
 }
 
 /**
@@ -47,6 +62,14 @@ export function findReachable (root) {
   // TODO: Loop through properties using for...in
   // TODO: If property value is not null, add property name to result
   // TODO: Return array of property names
+
+  let result = []
+
+  for (let key in root)
+    if (root[key] !== 0) {
+      result.push(key)
+    }
+    return result
 }
 
 /**
@@ -60,6 +83,10 @@ export function clearAllReferences (obj) {
   // TODO: Loop through all properties
   // TODO: Set each property to null
   // TODO: Return obj
+  for (let key in obj) {
+    obj[key] = null
+  }
+  return obj
 }
 
 /**
@@ -75,6 +102,14 @@ export function createCircularReference () {
   // TODO: Set obj1.next = obj2
   // TODO: Set obj2.prev = obj1
   // TODO: Return {obj1, obj2}
+
+  const obj1 = { id: 12 }
+  const obj2 = { id: 13 }
+
+  obj1.next = obj2
+  obj2.prev = obj1
+
+  return { obj1, obj2 }
 }
 
 /**
@@ -87,6 +122,9 @@ export function createCircularReference () {
 export function createIslandAndDetach (obj) {
   // TODO: Set obj to null (breaks connection to root)
   // TODO: Return null
+
+  obj = null
+  return null
 }
 
 /**
@@ -100,6 +138,10 @@ export function createIslandAndDetach (obj) {
 export function singleReferenceKeepsAlive (obj, ref1, ref2) {
   // TODO: Set ref1 to null
   // TODO: Return ref2 (object still reachable through ref2)
+
+  ref1 = null
+
+  return ref2
 }
 
 /**
@@ -114,6 +156,12 @@ export function createReferenceChain () {
   // TODO: Create obj2 = {value: 2, next: obj3}
   // TODO: Create obj1 = {value: 1, next: obj2}
   // TODO: Return obj1
+
+  const obj3 = { value: 3 }
+  const obj2 = { value: 2, next: obj3 }
+  const obj1 = { value: 1, next: obj2 }
+
+  return obj1
 }
 
 /**
@@ -127,6 +175,10 @@ export function wouldBeCollected (obj, referenceCount) {
   // TODO: If referenceCount is 0, return true (already unreachable)
   // TODO: If we null all references, it becomes unreachable
   // TODO: Return true (would be collected after nulling references)
+  if (referenceCount === 0) {
+    return true
+  }
+  return true
 }
 
 /**
@@ -139,6 +191,10 @@ export function wouldBeCollected (obj, referenceCount) {
 export function detachParent (parent) {
   // TODO: Set parent to null
   // TODO: Return null (both parent and child now unreachable)
+
+  parent = null
+
+  return null
 }
 
 /**
@@ -149,7 +205,12 @@ export function detachParent (parent) {
  */
 export function multiplePathsToObject (obj, path1, path2) {
   // TODO: If either path1 or path2 references obj, return true
-  // TODO: Return false if neither references it
+  // TODO: Return false if neither references it 
+  if (path1 === obj || path2 === obj) {
+    return true
+  }else if (path1 !== obj || path2 !== obj) {
+    return false
+  }
 }
 
 /**
@@ -164,4 +225,8 @@ export function cleanup (obj) {
   // TODO: Set obj.data to null
   // TODO: Set obj.listeners to empty array []
   // TODO: Return obj
+  obj.data = null
+  obj.listeners = []
+
+  return obj
 }

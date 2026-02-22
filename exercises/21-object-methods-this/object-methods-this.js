@@ -11,14 +11,16 @@ export function createPersonWithMethod (name) {
   // TODO: Create an object with name property and greet method
   // TODO: The greet method should use 'this.name'
   // TODO: Return the object
+
   const person = {
-    name: "",
+    name,
     greet() {
-      return `Hi, i am ${this.name}!`
+      return `Hi, I'm ${this.name}`
     }
   }
+  return person
 }
-person.greet("Martin")
+
 
 /**
  * Access 'this' in a method
@@ -31,12 +33,12 @@ export function createUser (name) {
     name,
     getName () {
       // TODO: Return this.name
-      return `Hi, i respond to ${this.name}`
+      return this.name
     }
   }
 }
-const p = createUser("Mozart")
-p.getName()
+const user = createUser()
+user.getName()
 
 /**
  * Method shorthand syntax
@@ -47,7 +49,14 @@ p.getName()
  */
 export function createCounter () {
   // TODO: Return object with count: 0 and increment method using shorthand
-  // TODO: increment() should do this.count++    
+  // TODO: increment() should do this.count++
+
+  return {
+    count: 0,
+    increment () {
+      return this.count++
+    }
+  }    
 }
 
 /**
@@ -63,6 +72,15 @@ export function createCounter () {
  */
 export function createCalculator (a, b) {
   // TODO: Create object with a, b properties and sum, multiply methods
+
+  return {
+    sum () {
+      return this.a + this.b
+    },
+    multiply () {
+      return this.a * this.b
+    }    
+  }
 }
 
 /**
@@ -80,6 +98,21 @@ export function createLadder () {
   // TODO: up() increments step and returns this
   // TODO: down() decrements step and returns this
   // TODO: showStep() returns current step value
+
+  let ladder = {
+    step: 0,
+    up() {
+      this.step++
+      return this
+    },
+    down() {
+      this.step--
+      return this
+    },
+    showStep: function () {
+      return this.step
+    }
+  }
 }
 
 /**
@@ -94,6 +127,10 @@ export function extractAndCallMethod (obj) {
   // TODO: Call the method as a standalone function
   // TODO: Return the result (will likely be undefined or error)
   // This demonstrates that 'this' is determined at call time
+
+  obj.method = user
+
+  return user()
 }
 
 /**
@@ -108,7 +145,8 @@ export function createObjectWithArrowFunction (name) {
     name,
     getNameDelayed () {
       // TODO: Return an arrow function that returns this.name
-      // The arrow function inherits 'this' from getNameDelayed
+      // The arro w function inherits 'this' from getNameDelayed
+      return () => this.name
     }
   }
 }
@@ -128,12 +166,14 @@ export function demonstrateThisDifference (name) {
     // Regular method - has its own 'this'
     regularMethod () {
       // TODO: Return this.name
+      return this.name
     },
     // Arrow function property - inherits 'this' from outer scope
     // In object literal, there's no outer 'this', so it gets global/undefined
     arrowMethod: () => {
       // TODO: Try to return this.name (won't work as expected!)
       // Arrow functions in object literals can't access the object via 'this'
+      return () => this.name
     }
   }
 }
@@ -148,6 +188,12 @@ export function createWorkingGreeting (name) {
   // TODO: Create object with name property
   // TODO: Add greet method as regular function (not arrow) that returns greeting
   // TODO: Use this.name in the greeting
+  return {
+    name,
+    greet () {
+      return `Hello, ${this.name}`
+    }
+  }
 }
 
 /**
@@ -162,12 +208,19 @@ export function createPersonWithFullName (firstName, lastName) {
     lastName,
     getFirstName () {
       // TODO: Return this.firstName
+
+      return this.firstName
     },
     getLastName () {
       // TODO: Return this.lastName
+
+      return this.lastName
     },
     getFullName () {
       // TODO: Return this.getFirstName() + ' ' + this.getLastName()
+
+      return this.getFirstName() + ' ' + this.getLastName()
+
     }
   }
 }
@@ -182,6 +235,10 @@ export function addMethod (user) {
   // TODO: Add sayHi method to user object
   // TODO: Method should return "Hi, I'm " + this.name
   // TODO: Return user
+
+  user.sayHi = function () {
+    return "Hi, I'm " + this.name
+  }
 }
 
 /**
@@ -193,6 +250,10 @@ export function addMethod (user) {
 export function copyMethod (source, target, methodName) {
   // TODO: Copy source[methodName] to target[methodName]
   // TODO: Return target
+
+  target[methodName] = source[methodName]
+
+  return target
 }
 
 /**
@@ -209,4 +270,17 @@ export function createBankAccount (initialBalance) {
   // TODO: Add deposit method that does this.balance += amount
   // TODO: Add withdraw method that does this.balance -= amount
   // TODO: Add getBalance method that returns this.balance
+
+  return {
+    initialBalance,
+    deposit (amount) {
+      return this.initialBalance += amount
+    },
+    withdraw (amount) {
+      return this.initialBalance -= amount
+    },
+    getBalance () {
+      return this.initialBalance
+    }
+  }
 }
