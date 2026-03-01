@@ -8,6 +8,9 @@
 export function User (name, age) {
   // TODO: Set this.name to name parameter
   // TODO: Set this.age to age parameter
+
+  this.name = name
+  this.age = age  
 }
 
 /**
@@ -17,6 +20,8 @@ export function User (name, age) {
  */
 export function createUser (name, age) {
   // TODO: Return new User(name, age)
+  
+  return new User(name, age)
 }
 
 /**
@@ -28,6 +33,12 @@ export function createUser (name, age) {
 export function Product (name, price) {
   // TODO: Set this.name and this.price
   // TODO: Add this.getInfo method that returns product info string
+
+  this.name = name;
+  this.price = price;
+  this.getInfo = function() {
+    return "Product: Phone costs $500"
+  }
 }
 
 /**
@@ -39,6 +50,9 @@ export function Product (name, price) {
 export function Animal (name, species = 'Unknown') {
   // TODO: Set this.name to name
   // TODO: Set this.species to species (uses default if not provided)
+
+  this.name = name
+  this.species = species
 }
 
 /**
@@ -50,6 +64,10 @@ export function Animal (name, species = 'Unknown') {
 export function Rectangle (width, height) {
   // TODO: Set this.width and this.height
   // TODO: Set this.area to width * height
+
+  this.width = width
+  this.height = height
+  this.area = width * height
 }
 
 /**
@@ -62,6 +80,11 @@ export function Rectangle (width, height) {
 export function Circle (radius) {
   // TODO: Set this.radius
   // TODO: Add getArea method that returns Math.PI * this.radius ** 2
+
+  this.radius = radius
+  this.getArea = function() {
+    return Math.PI * this.radius ** 2
+  }
 }
 
 /**
@@ -74,6 +97,10 @@ export function Circle (radius) {
 export function Password (password) {
   // TODO: Set this.password to password
   // TODO: Set this.isValid based on whether password.length >= 8
+
+  this.password = password
+
+  this.isValid = password.length >= 8
 }
 
 /**
@@ -87,6 +114,8 @@ export function SpecialConstructor () {
   this.name = 'created'
 
   // TODO: Return a new object {name: 'returned'} instead of 'this'
+
+  return { name: 'returned' }
 }
 
 /**
@@ -99,6 +128,8 @@ export function PrimitiveReturn (value) {
   this.value = value
 
   // TODO: Try to return 123 (this will be ignored!)
+
+  return 123
 }
 
 /**
@@ -110,6 +141,12 @@ export function PrimitiveReturn (value) {
 export function createMultipleUsers (age) {
   // TODO: Create 3 User objects (User1, User2, User3) with same age
   // TODO: Return array of the three user objects
+
+  const user1 = new User('User1', age)
+  const user2 = new User('User2', age)
+  const user3 = new User('User3', age)
+
+  return [user1, user2, user3]
 }
 
 /**
@@ -127,6 +164,8 @@ export function createProductWithoutParens () {
   }
 
   // TODO: Return new SimpleProduct (without parentheses)
+
+  return new SimpleProduct 
 }
 
 /**
@@ -139,6 +178,14 @@ export function TodoList () {
   // TODO: Set this.tasks to empty array
   // TODO: Add this.addTask method that pushes task to array
   // TODO: Add this.getCount method that returns tasks.length
+
+  this.tasks = []
+  this.addTask = function(task) {
+    this.tasks.push(task)
+  }
+  this.getCount = function() {
+    return this.tasks.length
+  }
 }
 
 /**
@@ -154,6 +201,12 @@ export function SafeUser (name) {
   // TODO: Check if new.target is undefined
   // TODO: If so, throw new Error('Must use new with SafeUser')
   // TODO: Otherwise, set this.name = name
+
+  if (!new.target) {
+    throw new Error('Must use new with SafeUser')
+  } else {
+    this.name = name
+  }
 }
 
 /**
@@ -166,6 +219,11 @@ export function SafeUser (name) {
 export function createSingleComplexUser (name) {
   // TODO: Return the result of: new function() { this.name = name; this.createdAt = new Date() }
   // This creates an anonymous constructor and calls it immediately
+
+  return new function() {
+    this.name = name,
+    this.createdAt = new Date()
+  }
 }
 
 /**
@@ -180,4 +238,11 @@ export function Counter () {
   // TODO: Add this.increment method that increases count
   // TODO: Add this.getCount method that returns count
   // count is not a property, but methods can access it via closure
+
+  this.increment = function() {
+    count++
+  }
+  this.getCount = function() {
+    return count
+  }
 }
