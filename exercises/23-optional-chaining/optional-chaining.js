@@ -1,3 +1,5 @@
+import { use } from "react"
+
 /**
  * Access nested property safely
  *
@@ -6,6 +8,8 @@
  */
 export function getStreet (user) {
   // TODO: Return user?.address?.street
+
+  return user?.address?.street
 }
 
 /**
@@ -16,6 +20,8 @@ export function getStreet (user) {
  */
 export function getCityWithDefault (user) {
   // TODO: Return user?.address?.city ?? 'Unknown'
+
+  return user?.address?.city ?? 'Unknown'
 }
 
 /**
@@ -26,6 +32,8 @@ export function getCityWithDefault (user) {
  */
 export function getStreetTraditional (user) {
   // TODO: Return user && user.address && user.address.street
+  
+  return user && user.address && user.address.street
 }
 
 /**
@@ -36,6 +44,8 @@ export function getStreetTraditional (user) {
  */
 export function getFirstUserName (users) {
   // TODO: Return users?.[0]?.name
+
+  return users?.[0]?.name
 }
 
 /**
@@ -46,6 +56,8 @@ export function getFirstUserName (users) {
  */
 export function callGetName (user) {
   // TODO: Return user.getName?.()
+
+  return user.getName?.()
 }
 
 /**
@@ -56,6 +68,8 @@ export function callGetName (user) {
  */
 export function getTheme (data) {
   // TODO: Return data?.user?.profile?.settings?.theme
+
+  return data?.user?.profile?.settings?.theme
 }
 
 /**
@@ -66,6 +80,8 @@ export function getTheme (data) {
  */
 export function chainAccess (obj) {
   // TODO: Return obj?.prop1?.prop2?.prop3
+
+  return obj?.prop1?.prop2?.prop3
 }
 
 /**
@@ -76,6 +92,8 @@ export function chainAccess (obj) {
  */
 export function getPropertySafely (obj, prop) {
   // TODO: Return obj?.[prop]
+
+  return obj?.[prop]
 }
 
 /**
@@ -86,6 +104,8 @@ export function getPropertySafely (obj, prop) {
  */
 export function callCallback (callbacks, data) {
   // TODO: Return callbacks?.onSuccess?.(data)
+
+  return callbacks?.onSuccess?.(data)
 }
 
 /**
@@ -96,6 +116,8 @@ export function callCallback (callbacks, data) {
  */
 export function getNameFromConfig (config) {
   // TODO: Return config?.user?.name ?? config?.account?.name ?? 'Guest'
+
+  return config?.user?.name ?? config?.account?.name ?? 'Guest'
 }
 
 /**
@@ -108,6 +130,8 @@ export function getNameFromConfig (config) {
 export function cannotDeleteWithOptionalChaining (user) {
   // TODO: Return false
   // Note: delete user?.address would be a syntax error
+
+  return false
 }
 
 /**
@@ -118,6 +142,8 @@ export function cannotDeleteWithOptionalChaining (user) {
  */
 export function checkPermission (admin) {
   // TODO: Return admin.permissions?.canEdit?.()
+
+  return admin.permission?.canEdit?.()
 }
 
 /**
@@ -129,6 +155,8 @@ export function checkPermission (admin) {
  */
 export function demonstrateShortCircuit (obj) {
   // TODO: Return obj?.missingProperty?.anotherProperty
+
+  return obj?.missingProperty?.anotherProperty
 }
 
 /**
@@ -139,6 +167,8 @@ export function demonstrateShortCircuit (obj) {
  */
 export function checkActiveAndPermission (user) {
   // TODO: Return user?.isActive && user?.permissions?.canPost
+
+  return user?.isActive && user?.permission?.canPost
 }
 
 /**
@@ -150,6 +180,8 @@ export function checkActiveAndPermission (user) {
  */
 export function handleUndefinedValue (value) {
   // TODO: Return value?.property ?? 'default'
+
+  return value?.property ?? 'default'
 }
 
 /**
@@ -161,6 +193,8 @@ export function handleUndefinedValue (value) {
  */
 export function safeMap (arr) {
   // TODO: Return arr?.map(x => x * 2)
+
+  return arr?.map(x => x * 2)
 }
 
 /**
@@ -174,6 +208,12 @@ export function getAgeCategory (user) {
   // TODO: If user is null/undefined, return 'unknown'
   // TODO: Otherwise return user.age >= 18 ? 'adult' : 'minor'
   // Hint: user?.age !== undefined ? (user.age >= 18 ? 'adult' : 'minor') : 'unknown'
+
+  if (!user) {
+    return 'Unknown'
+  } else {
+    return user.age >= 18 ? 'adult' : 'minor'
+  }
 }
 
 /**
@@ -187,6 +227,11 @@ export function addOptionalValues (obj1, obj2) {
   // TODO: Get val1 = obj1?.value ?? 0
   // TODO: Get val2 = obj2?.value ?? 0
   // TODO: Return val1 + val2
+  
+  const val1 = obj1?.value ?? 0
+  const val2 = obj2?.value ?? 0
+
+  return val1 + val2
 }
 
 /**
@@ -197,6 +242,9 @@ export function addOptionalValues (obj1, obj2) {
  */
 export function triggerChange (callbacks, value) {
   // TODO: Return callbacks?.onChange?.(value)
+
+     
+  return callbacks?.onChange?.(value)
 }
 
 /**
@@ -207,4 +255,6 @@ export function triggerChange (callbacks, value) {
  */
 export function getItemName (data, index) {
   // TODO: Return data?.items?.[index]?.name
+
+  return data?.items?.[index]?.name
 }

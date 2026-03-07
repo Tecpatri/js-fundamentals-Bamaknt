@@ -15,7 +15,13 @@
  */
 export function isEqual (a, b) {
   // TODO: Return true if a and b are strictly equal using ===
+  if (a === b) {
+    return true
+  } else {
+    return false
+  }
 }
+isEqual(5, 5)
 
 /**
  * Checks if a is greater than b
@@ -28,7 +34,13 @@ export function isEqual (a, b) {
  */
 export function isGreater (a, b) {
   // TODO: Return true if a is greater than b
+  if (a > b) {
+    return true
+  } else {
+    return false
+  }
 }
+isGreater(10, 5)
 
 /**
  * Checks if a is less than or equal to b
@@ -41,7 +53,13 @@ export function isGreater (a, b) {
  */
 export function isLessOrEqual (a, b) {
   // TODO: Return true if a is less than or equal to b
+  if (a <= b) {
+    return true
+  } else {
+    return false
+  }
 }
+isLessOrEqual(10, 5)
 
 /**
  * Compares two strings lexicographically
@@ -60,7 +78,15 @@ export function isLessOrEqual (a, b) {
 export function compareStrings (str1, str2) {
   // TODO: Compare the strings and return -1, 0, or 1
   // Hint: Use if statements with < and > operators
+  if (str1 < str2) {
+    return -1
+  } else if (str1 === str2) {
+    return 0
+  } else {
+    return 1
+  }
 }
+compareStrings('apple', 'banana')
 
 /**
  * Checks if two values are loosely equal using ==
@@ -75,7 +101,13 @@ export function compareStrings (str1, str2) {
 export function isLooselyEqual (a, b) {
   // TODO: Return true if a and b are loosely equal using ==
   // Note: This is for educational purposes. Use === in real code!
+  if (a == b) {
+    return true
+  } else {
+    return false
+  }
 }
+isLooselyEqual(5, '5')
 
 /**
  * Checks if x is between min and max (inclusive)
@@ -90,7 +122,13 @@ export function isLooselyEqual (a, b) {
 export function isBetween (x, min, max) {
   // TODO: Check if x is >= min AND x is <= max
   // Hint: Use the && operator with two comparisons
+  if (x >= min && x <= max) {
+    return true
+  } else {
+    return false
+  }
 }
+isBetween(1, 5, 10)
 
 /**
  * Checks if value is null or undefined
@@ -104,7 +142,13 @@ export function isBetween (x, min, max) {
 export function isNullish (value) {
   // TODO: Check if value is null or undefined
   // Hint: Use loose equality (==) with null to check for both
+  if (value == null || value === undefined) {
+    return true
+  } else {
+    return false
+  }
 }
+isNullish(true)
 
 /**
  * Compares two values and returns 'greater', 'less', or 'equal'
@@ -118,4 +162,12 @@ export function isNullish (value) {
  */
 export function compareValues (a, b) {
   // TODO: Use if/else if/else with comparison operators
+  if (a > b) {
+    return 'greater'
+  } else if (a < b) {
+    return 'less'
+  } else {
+    return 'equal'
+  }
 }
+compareValues(10, 5)

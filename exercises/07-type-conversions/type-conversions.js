@@ -8,7 +8,10 @@
 export function convertToString (value) {
   // TODO: Convert value to string using String()
   // TODO: Return { result: converted value, type: typeof converted value }
+  const a = String(value)
+  return { a, typeof: a }
 }
+convertToString(123)
 
 /**
  * Convert a value to a number using Number()
@@ -24,7 +27,11 @@ export function convertToString (value) {
 export function convertToNumber (value) {
   // TODO: Convert value to number using Number()
   // TODO: Return the result
+  let result = Number(value)
+
+  return result
 }
+console.log(convertToNumber('701'))
 
 /**
  * Convert a value to a boolean using Boolean()
@@ -36,7 +43,11 @@ export function convertToNumber (value) {
 export function convertToBoolean (value) {
   // TODO: Convert value to boolean using Boolean()
   // TODO: Return the result
+  let result = Boolean(value)
+
+  return result
 }
+console.log(convertToBoolean(123))
 
 /**
  * Handle conversion edge cases
@@ -50,7 +61,13 @@ export function convertToBoolean (value) {
  */
 export function handleConversionEdgeCases () {
   // TODO: Return an object with the three conversions above
+  return {
+    nullToNumber: Number(null),
+    undefinedToNumber: Number(undefined),
+    emptyStringToNumber: Number('')
+  }
 }
+handleConversionEdgeCases()
 
 /**
  * Demonstrate implicit (automatic) type conversion
@@ -65,7 +82,14 @@ export function handleConversionEdgeCases () {
  */
 export function demonstrateImplicitConversion () {
   // TODO: Return an object with the four implicit conversions above
+  return Object = {
+    stringPlusNumber: '5' + 3,
+    stringMinusNumber: '5' - 3,
+    booleanToNumber: true + 1,
+    unaryPlus: +'42'
+  }
 }
+demonstrateImplicitConversion()
 
 /**
  * Identify falsy values
@@ -78,4 +102,10 @@ export function demonstrateImplicitConversion () {
 export function isFalsy (value) {
   // TODO: Return true if value is falsy, false if truthy
   // Hint: Use !value or !Boolean(value)
+  if (!value) {
+    return true
+  } else {
+    return false
+  }
 }
+isFalsy(52)

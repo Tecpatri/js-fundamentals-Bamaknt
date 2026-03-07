@@ -14,7 +14,9 @@
 export function getValueOrDefault (value, defaultValue) {
   // TODO: Use the ?? operator to return value if it's not null/undefined,
   // otherwise return defaultValue
+  return value ?? defaultValue
 }
+getConfigValue(0, 10)
 
 /**
  * Formats a user's name. Returns the user's name property, or 'Guest' if the name
@@ -32,7 +34,9 @@ export function getValueOrDefault (value, defaultValue) {
 export function formatUserName (user) {
   // TODO: Use the ?? operator to return user.name if it's not null/undefined,
   // otherwise return 'Guest'
+  return user ?? 'Guest'
 }
+formatUserName(null)
 
 /**
  * Gets a configuration value by key, returning a default value if the config value
@@ -51,7 +55,9 @@ export function formatUserName (user) {
 export function getConfigValue (config, key, defaultValue) {
   // TODO: Use the ?? operator to return config[key] if it's not null/undefined,
   // otherwise return defaultValue
+  return config[key] ?? defaultValue
 }
+getConfigValue()
 
 /**
  * Returns the first value that is not null or undefined.
@@ -70,7 +76,9 @@ export function getConfigValue (config, key, defaultValue) {
 export function firstDefinedValue (a, b, c) {
   // TODO: Chain the ?? operator to return the first value that is not null/undefined
   // Hint: a ?? b ?? c
+  return a ?? b ?? c
 }
+firstDefinedValue(null, undefined, 42)
 
 /**
  * Compares the behavior of ?? and || operators with the same value.
@@ -89,4 +97,9 @@ export function compareOperators (value) {
   // - withNullish: value ?? 'default'
   // - withOr: value || 'default'
   // This shows how ?? treats 0, false, '' as valid values, while || treats them as falsy
+  return {
+    withNullish: value ?? 'default',
+    withOr: value || 'default'
+  }
 }
+compareOperators(0)
